@@ -61,11 +61,5 @@
     },
     "extra": {
         "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/tangrufus/Documents/php/imposter-plugin/"
-        }
-    ]
+    }
 }

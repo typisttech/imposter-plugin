@@ -17,6 +17,7 @@ class Functional extends Module implements DependsOnModule, RequiresPackage
 {
     protected $config = [
         'composerInstallFlags' => '--no-interaction --no-suggest --quite',
+        'symlink'              => 'true',
         'repositoryPaths'      => [],
     ];
 
@@ -28,6 +29,7 @@ modules:
         - \TypistTech\Imposter\Plugin\Helper\Functional:
             composerInstallFlags: '--no-interaction --quiet'
             projectRoot: 'tests/_data/fake-project'
+            symlink: 'false'
             repositoryPaths:
                 - 'tests/_data/dummy'
                 - 'tests/_data/another-dummy'
@@ -106,8 +108,14 @@ EOF;
         $paths = array_merge([''], $paths);
 
         array_map(function ($path, $index) {
-            $absolutePath = codecept_root_dir($path);
-            $this->runComposerCommand("config repositories.composer-project$index path $absolutePath");
+            $command = sprintf(
+                'config repositories.codeception%1$d \'{"type":"path","url":"%2$s","options":{"symlink":%3$s}}\'',
+                $index,
+                codecept_root_dir($path),
+                $this->_getConfig('symlink')
+            );
+
+            $this->runComposerCommand($command);
         }, $paths, array_keys($paths));
     }
 
