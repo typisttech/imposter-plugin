@@ -10,8 +10,11 @@ modules:
         # add framework module here
         - Cli
         - \TypistTech\Imposter\Plugin\Helper\Functional:
-            composerInstallFlags: '--no-interaction --quiet --prefer-dist'
+            composerInstallFlags: '--no-interaction --prefer-dist'
             projectRoot: 'tests/_data/fake-project'
+            repositoryPaths:
+                - 'tests/_data/dummy'
+                - 'tests/_data/dummy-psr4'
             depends:
                 - Cli
                 - Filesystem

@@ -1,5 +1,6 @@
 {
     "require": {
+        "dummy/dummy": "*",
         "typisttech/imposter-plugin": "*"
     },
     "minimum-stability": "dev"
