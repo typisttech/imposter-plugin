@@ -11,7 +11,7 @@ modules:
         - Cli
         - \TypistTech\Imposter\Plugin\Helper\Functional:
             composerInstallFlags: '--no-interaction --quiet --prefer-dist'
-            projectRoot: 'fake-project'
+            projectRoot: 'tests/_data/fake-project'
             depends:
                 - Cli
                 - Filesystem

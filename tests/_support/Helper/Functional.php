@@ -24,7 +24,7 @@ modules:
     enabled:
         - \TypistTech\Imposter\Plugin\Helper\Functional:
             composerInstallFlags: '--no-interaction --quiet'
-            projectRoot: 'fake-project'
+            projectRoot: 'tests/_data/fake-project'
             depends:
                 - Cli
                 - Filesystem
@@ -79,7 +79,7 @@ EOF;
 
     private function copyProjectRootToTmpProjectDir()
     {
-        $projectRoot = codecept_data_dir($this->config['projectRoot']);
+        $projectRoot = codecept_root_dir($this->_getConfig('projectRoot'));
 
         $this->debugSection('ComposerProject', "Project root is $projectRoot");
         $this->debugSection('ComposerProject', 'Copying project root to temporary directory');
