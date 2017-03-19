@@ -54,13 +54,7 @@
             "doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
-        "test": "codecept run",
-        "test-unit": "codecept run unit",
-        "test-functional": "codecept run functional",
-        "test-with-coverage": [
-            "codecept run unit --coverage --coverage-xml --coverage-html",
-            "codecept run functional"
-        ]
+        "test": "codecept run"
     },
     "config": {
         "sort-packages": true

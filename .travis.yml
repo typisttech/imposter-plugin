@@ -20,6 +20,7 @@ notifications:
     on_failure: change
 
 php:
+  - 7.0
   - 7.1
   - nightly
 
@@ -31,28 +32,13 @@ matrix:
   allow_failures:
     - php: nightly
   fast_finish: true
-  include:
-    - php: 7.0
-      env: WITH_COVERAGE=true
 
 before_script:
   # Disable xDebug to speed up the build unless test coverage is needed
-  - if [[ "$WITH_COVERAGE" != "true" && $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
+  - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
 
   - if [[ "TRAVIS_EVENT_TYPE" != "cron" ]]; then travis_retry composer install --prefer-dist; fi
   - if [[ "TRAVIS_EVENT_TYPE" == "cron" ]]; then travis_retry composer update --prefer-dist; fi
 
 script:
-    - if [[ "$WITH_COVERAGE" != "true" ]]; then vendor/bin/codecept run unit; fi
-    - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/codecept run unit --coverage --coverage-xml --coverage-html; fi
-
-    - vendor/bin/codecept functional
-
-after_script:
-  # Install helper scripts
-  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry composer global require --prefer-dist --no-suggest typisttech/travis-nginx-wordpress; fi
-  - if [[ "$WITH_COVERAGE" == "true" ]]; then export PATH=$HOME/.composer/vendor/bin:$PATH; fi
-
-  # Upload coverage report
-  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry tnw-upload-coverage-to-scrutinizer; fi
-  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry tnw-upload-coverage-to-codecov; fi
+    - vendor/bin/codecept run
