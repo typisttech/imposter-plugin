@@ -1,0 +1,58 @@
+language: php
+
+# This triggers builds to run on the new TravisCI infrastructure.
+# See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+sudo: false
+
+branches:
+  only:
+    - master
+    - /^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$/
+
+## Cache composer
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+php:
+  - 7.1
+  - nightly
+
+env:
+  global:
+    - COMPOSER_NO_INTERACTION=1
+
+matrix:
+  allow_failures:
+    - php: nightly
+  fast_finish: true
+  include:
+    - php: 7.0
+      env: WITH_COVERAGE=true
+
+before_script:
+  # Disable xDebug to speed up the build unless test coverage is needed
+  - if [[ "$WITH_COVERAGE" != "true" && $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
+
+  - if [[ "TRAVIS_EVENT_TYPE" != "cron" ]]; then travis_retry composer install --prefer-dist; fi
+  - if [[ "TRAVIS_EVENT_TYPE" == "cron" ]]; then travis_retry composer update --prefer-dist; fi
+
+script:
+    - if [[ "$WITH_COVERAGE" != "true" ]]; then vendor/bin/codecept run unit; fi
+    - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/codecept run unit --coverage --coverage-xml --coverage-html; fi
+
+    - vendor/bin/codecept functional
+
+after_script:
+  # Install helper scripts
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry composer global require --prefer-dist --no-suggest typisttech/travis-nginx-wordpress; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then export PATH=$HOME/.composer/vendor/bin:$PATH; fi
+
+  # Upload coverage report
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry tnw-upload-coverage-to-scrutinizer; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then travis_retry tnw-upload-coverage-to-codecov; fi

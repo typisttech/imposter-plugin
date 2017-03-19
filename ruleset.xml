@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+  ~ Imposter
+  ~
+  ~ Wrapping all composer vendor packages inside your own namespace.
+  ~ Intended for WordPress plugins.
+  ~
+  ~ @package TypistTech\Imposter
+  ~ @author Typist Tech <imposter@typist.tech>
+  ~ @copyright 2017 Typist Tech
+  ~ @license MIT
+  ~ @see https://www.typist.tech/projects/imposter
+  -->
+
+<ruleset name="PSR 2">
+
+    <description>PSR 2</description>
+
+    <exclude-pattern>/tests/_data/*</exclude-pattern>
+    <exclude-pattern>/tests/_output/*</exclude-pattern>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <rule ref="PSR2"/>
+
+    <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+        <exclude-pattern>/tests/*</exclude-pattern>
+    </rule>
+
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>/tests/_support/*Tester.php</exclude-pattern>
+    </rule>
+
+</ruleset>

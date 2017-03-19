@@ -1,0 +1,18 @@
+### Build ###
+/build/
+/release/
+
+### Codeception ###
+/codeception.yml
+/tests/_data/fake-project/
+/tests/_output/
+/tests/_support/_generated/
+
+### Composer ###
+/vendor/
+
+### npm ###
+/node_modules/
+
+### PhpStorm ###
+/.idea/
