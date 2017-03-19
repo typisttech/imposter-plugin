@@ -1,0 +1,71 @@
+{
+    "name": "typisttech/imposter-plugin",
+    "type": "composer-plugin",
+    "description": "Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins",
+    "keywords": [
+        "composer",
+        "composer-plugin",
+        "dependency",
+        "monkey-patching",
+        "namespace",
+        "wordpress"
+    ],
+    "homepage": "https://www.typist.tech/projects/imposter-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Typist Tech",
+            "email": "imposter-plugin@typist.tech",
+            "homepage": "https://www.typist.tech"
+        },
+        {
+            "name": "Tang Rufus",
+            "email": "tangrufus@gmail.com",
+            "homepage": "https://www.typist.tech",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "imposter-plugin@typist.tech",
+        "issues": "https://github.com/TypistTech/imposter-plugin/issues",
+        "source": "https://github.com/TypistTech/imposter-plugin"
+    },
+    "require": {
+        "php": "^7.0",
+        "composer-plugin-api": "^1.1",
+        "typisttech/imposter": "dev-master"
+    },
+    "require-dev": {
+        "codeception/base": "^2.2",
+        "composer/composer": "^1.4",
+        "spatie/temporary-directory": "^1.1",
+        "squizlabs/php_codesniffer": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "TypistTech\\Imposter\\Plugin\\": "src"
+        }
+    },
+    "scripts": {
+        "check-style": "phpcs --standard=ruleset.xml --colors -p -s .",
+        "fix-style": "phpcbf -p --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 .",
+        "pre-tag": [
+            "composer update",
+            "doctoc README.md",
+            "github_changelog_generator --no-verbose"
+        ],
+        "test": "codecept run"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/tangrufus/Documents/php/imposter-plugin/"
+        }
+    ]
+}
