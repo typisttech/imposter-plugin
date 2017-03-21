@@ -1,7 +1,7 @@
 {
     "name": "typisttech/imposter-plugin",
     "type": "composer-plugin",
-    "description": "Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins",
+    "description": "Composer plugin that wraps all composer vendor packages inside your own namespace. Intended for WordPress plugins",
     "keywords": [
         "composer",
         "composer-plugin",
