@@ -21,6 +21,21 @@ class FunctionalTester extends \Codeception\Actor
 {
     use _generated\FunctionalTesterActions;
 
+    public function assertNotTransformed(string $path)
+    {
+        $this->openFile($path);
+
+        $this->seeInThisFile('namespace Dummy');
+        $this->seeInThisFile('use Dummy');
+        $this->seeInThisFile('use OtherDummy');
+        $this->seeInThisFile('use AnotherDummy');
+
+        $this->dontSeeInThisFile('namespace MyPlugin\Vendor\Dummy');
+        $this->dontSeeInThisFile('use MyPlugin\Vendor\Dummy\SubOtherDummy;');
+        $this->dontSeeInThisFile('use MyPlugin\Vendor\OtherDummy\SubOtherDummy;');
+        $this->dontSeeInThisFile('use MyPlugin\Vendor\AnotherDummy\{');
+    }
+
     /**
      * Define custom actions here
      */
@@ -38,21 +53,5 @@ class FunctionalTester extends \Codeception\Actor
         $this->seeInThisFile('use MyPlugin\Vendor\Dummy\SubOtherDummy;');
         $this->seeInThisFile('use MyPlugin\Vendor\OtherDummy\SubOtherDummy;');
         $this->seeInThisFile('use MyPlugin\Vendor\AnotherDummy\{');
-    }
-
-
-    public function assertNotTransformed(string $path)
-    {
-        $this->openFile($path);
-
-        $this->seeInThisFile('namespace Dummy');
-        $this->seeInThisFile('use Dummy');
-        $this->seeInThisFile('use OtherDummy');
-        $this->seeInThisFile('use AnotherDummy');
-
-        $this->dontSeeInThisFile('namespace MyPlugin\Vendor\Dummy');
-        $this->dontSeeInThisFile('use MyPlugin\Vendor\Dummy\SubOtherDummy;');
-        $this->dontSeeInThisFile('use MyPlugin\Vendor\OtherDummy\SubOtherDummy;');
-        $this->dontSeeInThisFile('use MyPlugin\Vendor\AnotherDummy\{');
     }
 }
