@@ -3,7 +3,6 @@
 [![Latest Stable Version](https://poser.pugx.org/typisttech/imposter-plugin/v/stable)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Total Downloads](https://poser.pugx.org/typisttech/imposter-plugin/downloads)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Build Status](https://travis-ci.org/TypistTech/imposter-plugin.svg?branch=master)](https://travis-ci.org/TypistTech/imposter-plugin)
-[![codecov](https://codecov.io/gh/TypistTech/imposter-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/TypistTech/imposter-plugin)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TypistTech/imposter-plugin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TypistTech/imposter-plugin/?branch=master)
 [![PHP Versions Tested](http://php-eye.com/badge/typisttech/imposter-plugin/tested.svg)](https://travis-ci.org/TypistTech/imposter-plugin)
 [![StyleCI](https://styleci.io/repos/85290139/shield?branch=master)](https://styleci.io/repos/85290139)
@@ -54,8 +53,8 @@ Because of the lack of dependency management in WordPress, if two plugins bundle
 Monkey patching composer vendor packages, wrapping them inside your own namespace is a less-than-ideal solution to avoid such conflicts. 
 
 See:
-[A Narrative of Using Composer in a WordPress Plugin](https://wptavern.com/a-narrative-of-using-composer-in-a-wordpress-plugin)
-[A Warning About Using Composer With WordPress](https://blog.wppusher.com/a-warning-about-using-composer-with-wordpress/)
+- [A Narrative of Using Composer in a WordPress Plugin](https://wptavern.com/a-narrative-of-using-composer-in-a-wordpress-plugin)
+- [A Warning About Using Composer With WordPress](https://blog.wppusher.com/a-warning-about-using-composer-with-wordpress/)
 
 ## Install
 

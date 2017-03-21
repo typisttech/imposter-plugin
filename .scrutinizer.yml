@@ -1,6 +1,14 @@
+filter:
+    excluded_paths:
+        - "tests/"
+
 tools:
+    external_code_coverage:
+        enabled: false
+        timeout: 900
     php_analyzer: true
     php_cpd: false
+    php_code_coverage: false
     php_code_sniffer:
         config: { standard: psr2 }
     php_cs_fixer:
@@ -110,7 +118,7 @@ checks:
             remove_unused: true
             preserve_multiple: false
             preserve_blanklines: false
-            order_alphabetically: false
+            order_alphabetically: true
         fix_line_ending: true
         fix_doc_comments: true
         encourage_single_quotes: true

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!--
-  ~ Imposter
+  ~ Imposter Plugin
   ~
-  ~ Wrapping all composer vendor packages inside your own namespace.
+  ~ Composer plugin that wraps all composer vendor packages inside your own namespace.
   ~ Intended for WordPress plugins.
   ~
-  ~ @package TypistTech\Imposter
-  ~ @author Typist Tech <imposter@typist.tech>
+  ~ @package TypistTech\Imposter\Plugin
+  ~ @author Typist Tech <imposter-plugin@typist.tech>
   ~ @copyright 2017 Typist Tech
   ~ @license MIT
-  ~ @see https://www.typist.tech/projects/imposter
+  ~ @see https://www.typist.tech/projects/imposter-plugin
   -->
 
 <ruleset name="PSR 2">
