@@ -1,5 +1,5 @@
 preset: psr2
 
 finder:
-    exclude:
-        - "tests/_data"
+  exclude:
+    - "tests/_data"
