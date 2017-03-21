@@ -13,10 +13,7 @@
     "prefer-stable": true,
     "extra": {
         "imposter": {
-            "namespace": "MyPlugin\\Vendor",
-            "extra": [
-                "typisttech/imposter-plugin"
-            ]
+            "namespace": "MyPlugin\\Vendor"
         }
     }
 }
