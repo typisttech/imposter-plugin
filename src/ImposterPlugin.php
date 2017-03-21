@@ -14,6 +14,7 @@ use Composer\Script\Event;
 use Composer\Script\ScriptEvents;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use TypistTech\Imposter\ImposterFactory;
 use TypistTech\Imposter\Plugin\Capability\CommandProvider as ImposterCommandProvider;
 use TypistTech\Imposter\Plugin\Command\RunCommand;
 
@@ -57,9 +58,18 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
      *
      * @param Composer    $composer
      * @param IOInterface $io
+     *
+     * @return void
      */
     public function activate(Composer $composer, IOInterface $io)
     {
+        $package  = $composer->getPackage();
+        $autoload = $package->getAutoload();
+
+        $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
+
+        array_merge_recursive($autoload, ['classmap' => $imposter->getAutoloads()]);
+        $package->setAutoload($autoload);
     }
 
     /**
