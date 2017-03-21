@@ -26,8 +26,4 @@
         <exclude-pattern>/tests/*</exclude-pattern>
     </rule>
 
-    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
-        <exclude-pattern>/tests/_support/*Tester.php</exclude-pattern>
-    </rule>
-
 </ruleset>

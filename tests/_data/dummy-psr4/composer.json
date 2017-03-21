@@ -1,0 +1,8 @@
+{
+    "name": "dummy/dummy-psr4",
+    "autoload": {
+        "psr-4": {
+            "Dummy\\Psr4\\": "src/"
+        }
+    }
+}

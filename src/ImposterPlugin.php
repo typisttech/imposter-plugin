@@ -21,7 +21,6 @@ class ImposterPlugin implements PluginInterface, Capable
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        // TODO: Implement activate() method.
     }
 
     /**

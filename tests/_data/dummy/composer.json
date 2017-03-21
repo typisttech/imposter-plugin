@@ -1,0 +1,11 @@
+{
+    "name": "dummy/dummy",
+    "require": {
+        "dummy/dummy-psr4": "*"
+    },
+    "autoload": {
+        "files": [
+            "./DummyClass.php"
+        ]
+    }
+}

@@ -1,6 +1,22 @@
 {
     "require": {
+        "php": "^7.0",
+        "dummy/dummy": "*",
         "typisttech/imposter-plugin": "*"
     },
-    "minimum-stability": "dev"
+    "autoload": {
+        "files": [
+            "FakeProject.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "imposter": {
+            "namespace": "MyPlugin\\Vendor",
+            "extra": [
+                "typisttech/imposter-plugin"
+            ]
+        }
+    }
 }
