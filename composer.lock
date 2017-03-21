@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "36354609430cd3a9c76831e6bfd000f6",
+    "content-hash": "d97465fa908fd630a87a0a74cb1f0d68",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -321,16 +321,16 @@
         },
         {
             "name": "typisttech/imposter",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypistTech/imposter.git",
-                "reference": "08bb86bafbad5d5011156a24d7b32ad883bdf6c0"
+                "reference": "f051a82fb4cdb08236c4b94ecf5fe5c3fda19707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/08bb86bafbad5d5011156a24d7b32ad883bdf6c0",
-                "reference": "08bb86bafbad5d5011156a24d7b32ad883bdf6c0",
+                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/f051a82fb4cdb08236c4b94ecf5fe5c3fda19707",
+                "reference": "f051a82fb4cdb08236c4b94ecf5fe5c3fda19707",
                 "shasum": ""
             },
             "require": {
@@ -374,7 +374,7 @@
                 "namespace",
                 "wordpress"
             ],
-            "time": "2017-03-21 00:44:04"
+            "time": "2017-03-21T03:17:48+00:00"
         }
     ],
     "packages-dev": [
@@ -3098,9 +3098,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "typisttech/imposter": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
