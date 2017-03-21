@@ -14,7 +14,7 @@
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
 
 Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins.
-
+Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/TypistTech/imposter/).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -23,7 +23,10 @@ Wrapping all composer vendor packages inside your own namespace. Intended for Wo
 - [Why?](#why)
 - [Install](#install)
 - [Usage](#usage)
+  - [Sit Back and Relax](#sit-back-and-relax)
+  - [composer imposter:run](#composer-imposterrun)
 - [Frequently Asked Questions](#frequently-asked-questions)
+  - [What can I find out more information?](#what-can-i-find-out-more-information)
   - [Does Imposter Plugin support `PSR4`, `PSR0`, `Classmap` and `Files`?](#does-imposter-plugin-support-psr4-psr0-classmap-and-files)
   - [Does Imposter Plugin support `exclude-from-classmap`?](#does-imposter-plugin-support-exclude-from-classmap)
   - [How about `require-dev` packages?](#how-about-require-dev-packages)
@@ -62,30 +65,24 @@ Installation should be done via composer, details of how to install composer can
 $ composer require typisttech/imposter-plugin
 ```
 
-Then, config the imposter-plugin namespace in your `composer.json`
-
-```json
-"extra": {
-    "imposter-plugin": {
-        "namespace": "My\\App\\Vendor"
-    }
-}
-```
+Then, config Imposter in your `composer.json`
+See: [Imposter readme](https://github.com/TypistTech/imposter/)
 
 ## Usage
 
-After every `$ composer install` and `$ composer update`: 
+### Sit Back and Relax
 
-```php
-<?php 
+Once installed, Imposter Plugin hooks into `composer install`, `composer update` and `composer dump-autoload`, automatically run [Imposter](https://github.com/TypistTech/imposter/) for you.
+Besides, Imposter Plugin autoloads all modified files as [classmap](https://getcomposer.org/doc/04-schema.md#classmap).
 
-use TypistTech\Imposter Plugin\Imposter PluginFactory;
+### composer imposter:run
 
-$imposter-plugin = Imposter PluginFactory::forProject('/path/to/project/root');
-$imposter-plugin->run();
+If you want to run Imposter manually:
+```bash
+$ composer imposter:run
 ```
 
-The above snippet:
+This command:
 1. Look for `/path/to/project/root/composer.json`
 2. Find out [vendor-dir](https://getcomposer.org/doc/06-config.md#vendor-dir)
 3. Find out all [required packages](https://getcomposer.org/doc/04-schema.md#require), including those required by dependencies
@@ -127,6 +124,11 @@ class DummyClass
 ```
 
 ## Frequently Asked Questions
+
+### What can I find out more information?
+
+Imposter plugin is a composer plugin wrapper for [Imposter](https://github.com/TypistTech/imposter/).
+See: [Imposter](https://github.com/TypistTech/imposter/) for more details.
 
 ### Does Imposter Plugin support `PSR4`, `PSR0`, `Classmap` and `Files`?
 
