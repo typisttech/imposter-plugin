@@ -8,9 +8,10 @@ class_name: FunctionalTester
 modules:
     enabled:
         # add framework module here
+        - \TypistTech\Imposter\Plugin\Helper\Functional
         - Cli
         - Filesystem
-        - \TypistTech\Imposter\Plugin\Helper\Functional:
+        - ComposerProject:
             composerInstallFlags: '--no-interaction --prefer-dist --no-suggest --no-ansi'
             projectRoot: 'tests/_data/fake-project'
             symlink: 'false'

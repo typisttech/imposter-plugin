@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d97465fa908fd630a87a0a74cb1f0d68",
+    "content-hash": "c9b14ee18f6cdef6b2c2d03cae2fdc23",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -3044,6 +3044,63 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2017-03-07T16:47:02+00:00"
+        },
+        {
+            "name": "typisttech/codeception-composer-project-module",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TypistTech/codeception-composer-project-module.git",
+                "reference": "952546c6d5ef216a5a3eaf9e2a25d7cfd6c237f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TypistTech/codeception-composer-project-module/zipball/952546c6d5ef216a5a3eaf9e2a25d7cfd6c237f8",
+                "reference": "952546c6d5ef216a5a3eaf9e2a25d7cfd6c237f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "spatie/temporary-directory": "^1.1"
+            },
+            "require-dev": {
+                "codeception/aspect-mock": "^2.0",
+                "codeception/base": "^2.2",
+                "squizlabs/php_codesniffer": "^2.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Codeception\\Module\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tang Rufus",
+                    "email": "tangrufus@gmail.com",
+                    "homepage": "https://www.typist.tech",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Typist Tech",
+                    "email": "codeception-composer-project-module@typist.tech",
+                    "homepage": "https://www.typist.tech"
+                }
+            ],
+            "description": "Create throw away composer projects for Codeception tests",
+            "homepage": "https://www.typist.tech/projects/codeception-composer-project-module",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "codeception module",
+                "composer",
+                "testing"
+            ],
+            "time": "2017-03-22T12:59:04+00:00"
         },
         {
             "name": "webmozart/assert",
