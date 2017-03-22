@@ -38,8 +38,8 @@
     "require-dev": {
         "codeception/base": "^2.2",
         "composer/composer": "^1.4",
-        "spatie/temporary-directory": "^1.1",
-        "squizlabs/php_codesniffer": "^2.8"
+        "squizlabs/php_codesniffer": "^2.8",
+        "typisttech/codeception-composer-project-module": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
