@@ -19,6 +19,7 @@ namespace TypistTech\Imposter\Plugin;
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
+use Composer\Package\RootPackageInterface;
 use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
@@ -75,13 +76,30 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        $package  = $composer->getPackage();
+        $package = $composer->getPackage();
+        $this->setImposterClassmap($package);
+    }
+
+    /**
+     * @param $package
+     */
+    private function setImposterClassmap(RootPackageInterface $package)
+    {
         $autoload = $package->getAutoload();
+        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getClassmap()]);
 
-        $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
-
-        array_merge_recursive($autoload, ['classmap' => $imposter->getAutoloads()]);
         $package->setAutoload($autoload);
+    }
+
+    /**
+     * @return array
+     */
+    private function getClassmap(): array
+    {
+        $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
+        return array_map(function ($path) {
+            return str_replace(getcwd() . '/', '', $path);
+        }, $imposter->getAutoloads());
     }
 
     /**
