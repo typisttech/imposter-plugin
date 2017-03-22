@@ -81,6 +81,8 @@ If you want to run Imposter manually:
 $ composer imposter:run
 ```
 
+**Note**: You need to run `$ composer dump-autoload` after this command. 
+
 This command:
 1. Look for `/path/to/project/root/composer.json`
 2. Find out [vendor-dir](https://getcomposer.org/doc/06-config.md#vendor-dir)

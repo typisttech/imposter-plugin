@@ -17,55 +17,18 @@ declare(strict_types=1);
 namespace TypistTech\Imposter\Plugin;
 
 use Composer\Composer;
-use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
+use Composer\Package\CompletePackage;
 use Composer\Package\RootPackageInterface;
 use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
-use Composer\Script\Event;
 use Composer\Script\ScriptEvents;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\NullOutput;
 use TypistTech\Imposter\ImposterFactory;
 use TypistTech\Imposter\Plugin\Capability\CommandProvider as ImposterCommandProvider;
-use TypistTech\Imposter\Plugin\Command\RunCommand;
 
-class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterface
+class ImposterPlugin implements PluginInterface, Capable
 {
-    /**
-     * Returns an array of event names this subscriber wants to listen to.
-     *
-     * The array keys are event names and the value can be:
-     *
-     * * The method name to call (priority defaults to 0)
-     * * An array composed of the method name to call and the priority
-     * * An array of arrays composed of the method names to call and respective
-     *   priorities, or 0 if unset
-     *
-     * For instance:
-     *
-     * * array('eventName' => 'methodName')
-     * * array('eventName' => array('methodName', $priority))
-     * * array('eventName' => array(array('methodName1', $priority), array('methodName2'))
-     *
-     * @return array The event names to listen to
-     */
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            ScriptEvents::POST_INSTALL_CMD  => [
-                ['runImposter', 10],
-            ],
-            ScriptEvents::POST_UPDATE_CMD   => [
-                ['runImposter', 10],
-            ],
-            ScriptEvents::PRE_AUTOLOAD_DUMP => [
-                ['runImposter', 10],
-            ],
-        ];
-    }
-
     /**
      * Apply plugin modifications to Composer
      *
@@ -77,16 +40,21 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
     public function activate(Composer $composer, IOInterface $io)
     {
         $package = $composer->getPackage();
-        $this->setImposterClassmap($package);
+
+        $this->addAutoloadTo($package);
+
+        if ($package instanceof CompletePackage) {
+            $this->addScriptsTo($package);
+        }
     }
 
     /**
      * @param $package
      */
-    private function setImposterClassmap(RootPackageInterface $package)
+    private function addAutoloadTo(RootPackageInterface $package)
     {
         $autoload = $package->getAutoload();
-        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getClassmap()]);
+        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getImposterAutoloads()]);
 
         $package->setAutoload($autoload);
     }
@@ -94,12 +62,38 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
     /**
      * @return array
      */
-    private function getClassmap(): array
+    private function getImposterAutoloads(): array
     {
         $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
         return array_map(function ($path) {
             return str_replace(getcwd() . '/', '', $path);
         }, $imposter->getAutoloads());
+    }
+
+    /**
+     * @param $package
+     */
+    private function addScriptsTo(CompletePackage $package)
+    {
+        $scripts = $package->getScripts();
+        $scripts = array_merge_recursive($scripts, $this->getScripts());
+
+        $package->setScripts($scripts);
+    }
+
+    private function getScripts(): array
+    {
+        return [
+            ScriptEvents::POST_INSTALL_CMD  => [
+                'composer imposter:run',
+            ],
+            ScriptEvents::POST_UPDATE_CMD   => [
+                'composer imposter:run',
+            ],
+            ScriptEvents::PRE_AUTOLOAD_DUMP => [
+                'composer imposter:run',
+            ],
+        ];
     }
 
     /**
@@ -125,22 +119,5 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
         return [
             CommandProvider::class => ImposterCommandProvider::class,
         ];
-    }
-
-    /**
-     * @param Event $event
-     *
-     * @return void
-     * @throws \Symfony\Component\Console\Exception\LogicException
-     */
-    public function runImposter(Event $event)
-    {
-        $io = $event->getIO();
-        $io->write('Running Imposter...');
-
-        $command = new RunCommand;
-        $command->run(new ArrayInput([]), new NullOutput);
-
-        $io->write('Done.');
     }
 }

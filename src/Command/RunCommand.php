@@ -20,7 +20,6 @@ use Composer\Command\BaseCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 use TypistTech\Imposter\Imposter;
 use TypistTech\Imposter\ImposterFactory;
 
@@ -44,25 +43,30 @@ EOT
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
-
-        $io->title('Running Imposter...');
-        $io->text('Loading package information from <info>' . getcwd() . '/composer.json</info>');
+        $output->write('<comment>Running Imposter...</comment>', true);
+        $output->write('<comment>======================</comment>', true);
+        $output->write('Loading package information from <info>' . getcwd() . '/composer.json</info>', true);
 
         $count = count($this->getAutoloads());
-        $io->text("Number of autoloads found: <info>$count</info>");
+        $output->write("Imposter operations: <info>$count</info> transformations", true);
 
         $progressBar = new ProgressBar($output, $count);
         $progressBar->start();
 
         $autoloads = $this->getAutoloads();
-        array_walk($autoloads, function ($autoload) use ($io, $progressBar) {
-            $this->transform($autoload, $io, $progressBar);
+        array_walk($autoloads, function ($autoload) use ($output, $progressBar) {
+            $progressBar->clear();
+            $output->write(" - Transforming: <comment>$autoload</comment>", true);
+            $progressBar->display();
+
+            $this->transform($autoload);
+
+            $progressBar->advance();
         });
 
         $progressBar->finish();
-        $io->newLine();
-        $io->text('<info>Done.</info>');
+        $output->write(PHP_EOL);
+        $output->write('<info>Done.</info>', true);
     }
 
     /**
@@ -83,20 +87,12 @@ EOT
     }
 
     /**
-     * @param string       $autoload
-     * @param SymfonyStyle $io
-     * @param ProgressBar  $progressBar
+     * @param string $autoload
      *
      * @return void
      */
-    private function transform(string $autoload, SymfonyStyle $io, ProgressBar $progressBar)
+    private function transform(string $autoload)
     {
-        $progressBar->clear();
-        $io->text(" * Transforming: <comment>$autoload</comment>");
-        $progressBar->display();
-
         $this->getImposter()->transform($autoload);
-
-        $progressBar->advance();
     }
 }
