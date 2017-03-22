@@ -1,8 +1,22 @@
 # Change Log
 
+## [0.1.0](https://github.com/TypistTech/imposter-plugin/tree/0.1.0) (2017-03-22)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.1.0...0.1.0)
+
+**Closed issues:**
+
+- Remove codecov.io badge from readme [\#5](https://github.com/TypistTech/imposter-plugin/issues/5)
+
+**Merged pull requests:**
+
+- Run command during install, update and dump-autoload [\#8](https://github.com/TypistTech/imposter-plugin/pull/8) ([TangRufus](https://github.com/TangRufus))
+- Fix: Classmap not autoloaded [\#7](https://github.com/TypistTech/imposter-plugin/pull/7) ([TangRufus](https://github.com/TangRufus))
+- Update code style and comments [\#6](https://github.com/TypistTech/imposter-plugin/pull/6) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.1.0](https://github.com/TypistTech/imposter-plugin/tree/0.1.0) (2017-03-21)
 **Merged pull requests:**
 
+- Version bump 0.1.0 [\#4](https://github.com/TypistTech/imposter-plugin/pull/4) ([TangRufus](https://github.com/TangRufus))
 - Add classmap autoload [\#3](https://github.com/TypistTech/imposter-plugin/pull/3) ([TangRufus](https://github.com/TangRufus))
 - Add composer imposer:run command [\#2](https://github.com/TypistTech/imposter-plugin/pull/2) ([TangRufus](https://github.com/TangRufus))
 
