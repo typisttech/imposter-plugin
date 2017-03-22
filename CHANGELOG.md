@@ -1,7 +1,7 @@
 # Change Log
 
-## [0.1.0](https://github.com/TypistTech/imposter-plugin/tree/0.1.0) (2017-03-22)
-[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.1.0...0.1.0)
+## [0.2.0](https://github.com/TypistTech/imposter-plugin/tree/0.2.0) (2017-03-22)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.1.0...0.2.0)
 
 **Closed issues:**
 
@@ -9,6 +9,7 @@
 
 **Merged pull requests:**
 
+- Version bump 0.2.0 [\#9](https://github.com/TypistTech/imposter-plugin/pull/9) ([TangRufus](https://github.com/TangRufus))
 - Run command during install, update and dump-autoload [\#8](https://github.com/TypistTech/imposter-plugin/pull/8) ([TangRufus](https://github.com/TangRufus))
 - Fix: Classmap not autoloaded [\#7](https://github.com/TypistTech/imposter-plugin/pull/7) ([TangRufus](https://github.com/TangRufus))
 - Update code style and comments [\#6](https://github.com/TypistTech/imposter-plugin/pull/6) ([TangRufus](https://github.com/TangRufus))
