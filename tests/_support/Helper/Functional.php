@@ -16,7 +16,7 @@ use Spatie\TemporaryDirectory\TemporaryDirectory;
 class Functional extends Module implements DependsOnModule, RequiresPackage
 {
     protected $config = [
-        'composerInstallFlags' => '--no-interaction --no-suggest --quite',
+        'composerInstallFlags' => '--no-interaction --quite',
         'symlink'              => 'true',
         'repositoryPaths'      => [],
     ];
@@ -56,6 +56,11 @@ EOF;
      */
     private $tmpProjectDir;
 
+    /**
+     * @param TestInterface $test
+     *
+     * @return void
+     */
     public function _after(TestInterface $test)
     {
         $this->debugSection('ComposerProject', 'Deleting temporary directory...');
@@ -65,6 +70,11 @@ EOF;
         $this->debugSection('ComposerProject', 'Deleted temporary directory');
     }
 
+    /**
+     * @param TestInterface $test
+     *
+     * @return void
+     */
     public function _before(TestInterface $test)
     {
         $this->createTmpProjectDir();
@@ -73,9 +83,12 @@ EOF;
         $this->amInTmpProjectDir();
 
         $this->configComposerRepositoryPaths($this->_getConfig('repositoryPaths'));
-        $this->runComposerCommand('install ' . $this->_getConfig('composerInstallFlags'));
+        $this->runComposerInstall();
     }
 
+    /**
+     * @return void
+     */
     private function createTmpProjectDir()
     {
         $this->debugSection('ComposerProject', 'Creating temporary directory...');
@@ -85,6 +98,9 @@ EOF;
         $this->debugSection('ComposerProject', "Created temporary directory at $this->tmpProjectDir");
     }
 
+    /**
+     * @return void
+     */
     private function copyProjectRootToTmpProjectDir()
     {
         $projectRoot = codecept_root_dir($this->_getConfig('projectRoot'));
@@ -98,11 +114,19 @@ EOF;
         );
     }
 
+    /**
+     * @retun void
+     */
     public function amInTmpProjectDir()
     {
         $this->filesystem->amInPath($this->tmpProjectDir);
     }
 
+    /**
+     * @param array $paths
+     *
+     * @return void
+     */
     private function configComposerRepositoryPaths(array $paths)
     {
         $paths = array_merge([''], $paths);
@@ -119,13 +143,27 @@ EOF;
         }, $paths, array_keys($paths));
     }
 
+    /**
+     * @param string $command
+     * @param bool   $failNonZero
+     *
+     * @return void
+     */
     public function runComposerCommand(string $command, bool $failNonZero = true)
     {
         $this->debug("> composer $command");
         $this->cli->runShellCommand("composer $command", $failNonZero);
     }
 
-    public function _depends()
+    /**
+     * @void
+     */
+    public function runComposerInstall()
+    {
+        $this->runComposerCommand('install ' . $this->_getConfig('composerInstallFlags'));
+    }
+
+    public function _depends(): array
     {
         return [
             Cli::class        => $this->dependencyMessage,
@@ -133,13 +171,19 @@ EOF;
         ];
     }
 
+    /**
+     * @param Cli        $cli
+     * @param Filesystem $filesystem
+     *
+     * @return void
+     */
     public function _inject(Cli $cli, Filesystem $filesystem)
     {
         $this->cli        = $cli;
         $this->filesystem = $filesystem;
     }
 
-    public function _requires()
+    public function _requires(): array
     {
         return [
             TemporaryDirectory::class => '"spatie/temporary-directory": "^1.1"',
