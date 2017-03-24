@@ -1,5 +1,20 @@
 # Change Log
 
+## [0.2.2](https://github.com/TypistTech/imposter-plugin/tree/0.2.2) (2017-03-25)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.1...0.2.2)
+
+**Merged pull requests:**
+
+- Only activate when running with CompletePackage [\#12](https://github.com/TypistTech/imposter-plugin/pull/12) ([TangRufus](https://github.com/TangRufus))
+- Extract codeception composer project module [\#11](https://github.com/TypistTech/imposter-plugin/pull/11) ([TangRufus](https://github.com/TangRufus))
+
+## [0.2.1](https://github.com/TypistTech/imposter-plugin/tree/0.2.1) (2017-03-22)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.0...0.2.1)
+
+**Merged pull requests:**
+
+- Version bump 0.2.1 [\#10](https://github.com/TypistTech/imposter-plugin/pull/10) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.2.0](https://github.com/TypistTech/imposter-plugin/tree/0.2.0) (2017-03-22)
 [Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.1.0...0.2.0)
 
