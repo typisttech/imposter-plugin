@@ -19,7 +19,6 @@ namespace TypistTech\Imposter\Plugin;
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Package\CompletePackage;
-use Composer\Package\RootPackageInterface;
 use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
@@ -41,17 +40,18 @@ class ImposterPlugin implements PluginInterface, Capable
     {
         $package = $composer->getPackage();
 
-        $this->addAutoloadTo($package);
-
-        if ($package instanceof CompletePackage) {
-            $this->addScriptsTo($package);
+        if (!$package instanceof CompletePackage) {
+            return;
         }
+
+        $this->addScriptsTo($package);
+        $this->addAutoloadTo($package);
     }
 
     /**
      * @param $package
      */
-    private function addAutoloadTo(RootPackageInterface $package)
+    private function addAutoloadTo(CompletePackage $package)
     {
         $autoload = $package->getAutoload();
         $autoload = array_merge_recursive($autoload, ['classmap' => $this->getImposterAutoloads()]);
