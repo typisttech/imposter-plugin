@@ -65,7 +65,19 @@ $ composer require typisttech/imposter-plugin
 ```
 
 Then, config Imposter in your `composer.json`
-See: [Imposter readme](https://github.com/TypistTech/imposter/)
+
+```json
+"extra": {
+    "imposter": {
+        "namespace": "My\\App\\Vendor",
+        "excludes": [
+            "dummy/dummy-excluded"
+        ]
+    }
+}
+```
+
+See: [Imposter readme](https://github.com/Typisttech/imposter#config) for details.
 
 ## Usage
 
@@ -143,7 +155,6 @@ Pull requests are welcome.
 ### How about `require-dev` packages?
 
 Imposter Plugin do nothing on `require-dev` packages because imposter-plugin is intended for avoiding production environment., not for development environment. 
-
 
 ### How about packages that don't use namespaces?
 
