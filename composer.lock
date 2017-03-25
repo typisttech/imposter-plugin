@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9b14ee18f6cdef6b2c2d03cae2fdc23",
+    "content-hash": "7d1391d1df8793aa1bc0283fc4a3f78b",
     "packages": [
         {
             "name": "typisttech/imposter",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypistTech/imposter.git",
-                "reference": "d76084b889cc62d8fd376dbf0fb45df0c281c4a0"
+                "reference": "e2f75d6241ec37f65362a7741a5ca279137d3319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/d76084b889cc62d8fd376dbf0fb45df0c281c4a0",
-                "reference": "d76084b889cc62d8fd376dbf0fb45df0c281c4a0",
+                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/e2f75d6241ec37f65362a7741a5ca279137d3319",
+                "reference": "e2f75d6241ec37f65362a7741a5ca279137d3319",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 "namespace",
                 "wordpress"
             ],
-            "time": "2017-03-24T22:03:41+00:00"
+            "time": "2017-03-25T01:21:14+00:00"
         }
     ],
     "packages-dev": [
