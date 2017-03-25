@@ -63,6 +63,12 @@ class ImposterPlugin implements PluginInterface, Capable
     private function getScripts(): array
     {
         return [
+            ScriptEvents::POST_INSTALL_CMD => [
+                '@composer dump-autoload -o'
+            ],
+            ScriptEvents::POST_UPDATE_CMD => [
+                '@composer dump-autoload -o'
+            ],
             ScriptEvents::PRE_AUTOLOAD_DUMP => [
                 '@composer imposter:run',
             ],
