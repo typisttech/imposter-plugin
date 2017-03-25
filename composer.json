@@ -33,7 +33,7 @@
     "require": {
         "php": "^7.0",
         "composer-plugin-api": "^1.1",
-        "typisttech/imposter": "^0.1.0"
+        "typisttech/imposter": "^0.2.0"
     },
     "require-dev": {
         "codeception/base": "^2.2",

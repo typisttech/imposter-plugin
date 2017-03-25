@@ -23,6 +23,7 @@ use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\ScriptEvents;
+use RuntimeException;
 use TypistTech\Imposter\ImposterFactory;
 use TypistTech\Imposter\Plugin\Capability\CommandProvider as ImposterCommandProvider;
 
@@ -51,28 +52,6 @@ class ImposterPlugin implements PluginInterface, Capable
     /**
      * @param $package
      */
-    private function addAutoloadTo(CompletePackage $package)
-    {
-        $autoload = $package->getAutoload();
-        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getImposterAutoloads()]);
-
-        $package->setAutoload($autoload);
-    }
-
-    /**
-     * @return array
-     */
-    private function getImposterAutoloads(): array
-    {
-        $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
-        return array_map(function ($path) {
-            return str_replace(getcwd() . '/', '', $path);
-        }, $imposter->getAutoloads());
-    }
-
-    /**
-     * @param $package
-     */
     private function addScriptsTo(CompletePackage $package)
     {
         $scripts = $package->getScripts();
@@ -85,15 +64,43 @@ class ImposterPlugin implements PluginInterface, Capable
     {
         return [
             ScriptEvents::POST_INSTALL_CMD  => [
-                'composer imposter:run',
+                '@composer imposter:run',
             ],
             ScriptEvents::POST_UPDATE_CMD   => [
-                'composer imposter:run',
+                '@composer imposter:run',
             ],
             ScriptEvents::PRE_AUTOLOAD_DUMP => [
-                'composer imposter:run',
+                '@composer imposter:run',
             ],
         ];
+    }
+
+    /**
+     * @param $package
+     */
+    private function addAutoloadTo(CompletePackage $package)
+    {
+        $autoload = $package->getAutoload();
+        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getImposterAutoloads()]);
+
+        $package->setAutoload($autoload);
+    }
+
+    /**
+     * @todo Think of a better way to handle file not found during installation
+     * @return array
+     */
+    private function getImposterAutoloads(): array
+    {
+        try {
+            $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
+
+            return array_map(function ($path) {
+                return str_replace(getcwd() . '/', '', $path);
+            }, $imposter->getAutoloads());
+        } catch (RuntimeException $exception) {
+            return [];
+        }
     }
 
     /**
