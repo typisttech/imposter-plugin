@@ -27,6 +27,9 @@ php:
 env:
     global:
         - COMPOSER_NO_INTERACTION=1
+    matrix:
+        - COMPOSER_DEPENDENCIES="highest"
+        - COMPOSER_DEPENDENCIES=""
 
 matrix:
     allow_failures:
@@ -37,8 +40,8 @@ before_script:
     # Disable xDebug to speed up the build unless test coverage is needed
     - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
 
-    - if [[ "TRAVIS_EVENT_TYPE" != "cron" ]]; then travis_retry composer install --prefer-dist; fi
-    - if [[ "TRAVIS_EVENT_TYPE" == "cron" ]]; then travis_retry composer update --prefer-dist; fi
+    - if [[ "$COMPOSER_DEPENDENCIES" == "highest" ]]; then travis_retry composer update --prefer-dist; fi
+    - if [[ "$COMPOSER_DEPENDENCIES" == "" ]]; then travis_retry composer install --prefer-dist; fi
 
 script:
     - vendor/bin/codecept run
