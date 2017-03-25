@@ -29,6 +29,7 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
   - [Does Imposter Plugin support `PSR4`, `PSR0`, `Classmap` and `Files`?](#does-imposter-plugin-support-psr4-psr0-classmap-and-files)
   - [Does Imposter Plugin support `exclude-from-classmap`?](#does-imposter-plugin-support-exclude-from-classmap)
   - [How about `require-dev` packages?](#how-about-require-dev-packages)
+  - [How about PHP built-in classes?](#how-about-php-built-in-classes)
   - [How about packages that don't use namespaces?](#how-about-packages-that-dont-use-namespaces)
   - [How about packages that use fully qualified name?](#how-about-packages-that-use-fully-qualified-name)
 - [Support!](#support)

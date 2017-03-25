@@ -1,10 +1,21 @@
 # Change Log
 
+## [0.2.4](https://github.com/TypistTech/imposter-plugin/tree/0.2.4) (2017-03-25)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.3...0.2.4)
+
+**Merged pull requests:**
+
+- Fix: Dump autoload during install and update [\#19](https://github.com/TypistTech/imposter-plugin/pull/19) ([TangRufus](https://github.com/TangRufus))
+- Fix: Classmap not autoloaded during first install [\#18](https://github.com/TypistTech/imposter-plugin/pull/18) ([TangRufus](https://github.com/TangRufus))
+- Add  global namespace info [\#17](https://github.com/TypistTech/imposter-plugin/pull/17) ([TangRufus](https://github.com/TangRufus))
+- Test against highest and locked composer dependencies [\#16](https://github.com/TypistTech/imposter-plugin/pull/16) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.2.3](https://github.com/TypistTech/imposter-plugin/tree/0.2.3) (2017-03-25)
 [Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.2...0.2.3)
 
 **Merged pull requests:**
 
+- Version bump 0.2.3 [\#15](https://github.com/TypistTech/imposter-plugin/pull/15) ([TangRufus](https://github.com/TangRufus))
 - Fix: You must set up the project dependencies using `composer install` [\#14](https://github.com/TypistTech/imposter-plugin/pull/14) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.2](https://github.com/TypistTech/imposter-plugin/tree/0.2.2) (2017-03-24)
