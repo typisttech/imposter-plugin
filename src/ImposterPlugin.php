@@ -19,6 +19,7 @@ namespace TypistTech\Imposter\Plugin;
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Package\CompletePackage;
+use Composer\Package\RootPackageInterface;
 use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
@@ -41,16 +42,19 @@ class ImposterPlugin implements PluginInterface, Capable
     {
         $package = $composer->getPackage();
 
-        if (!$package instanceof CompletePackage) {
-            return;
+        if ($package instanceof CompletePackage) {
+            $this->addScriptsTo($package);
         }
 
-        $this->addScriptsTo($package);
-        $this->addAutoloadTo($package);
+        if ($package instanceof RootPackageInterface) {
+            $this->addAutoloadTo($package);
+        }
     }
 
     /**
      * @param $package
+     *
+     * @return void
      */
     private function addScriptsTo(CompletePackage $package)
     {
@@ -60,14 +64,14 @@ class ImposterPlugin implements PluginInterface, Capable
         $package->setScripts($scripts);
     }
 
-    private function getScripts(): array
+    private function getScripts() : array
     {
         return [
-            ScriptEvents::POST_INSTALL_CMD => [
-                '@composer dump-autoload -o'
+            ScriptEvents::POST_INSTALL_CMD  => [
+                '@composer dump-autoload -o',
             ],
-            ScriptEvents::POST_UPDATE_CMD => [
-                '@composer dump-autoload -o'
+            ScriptEvents::POST_UPDATE_CMD   => [
+                '@composer dump-autoload -o',
             ],
             ScriptEvents::PRE_AUTOLOAD_DUMP => [
                 '@composer imposter:run',
@@ -77,11 +81,13 @@ class ImposterPlugin implements PluginInterface, Capable
 
     /**
      * @param $package
+     *
+     * @return void
      */
-    private function addAutoloadTo(CompletePackage $package)
+    private function addAutoloadTo(RootPackageInterface $package)
     {
         $autoload = $package->getAutoload();
-        $autoload = array_merge_recursive($autoload, ['classmap' => $this->getImposterAutoloads()]);
+        $autoload = array_merge_recursive($autoload, [ 'classmap' => $this->getImposterAutoloads() ]);
 
         $package->setAutoload($autoload);
     }
@@ -90,10 +96,10 @@ class ImposterPlugin implements PluginInterface, Capable
      * @todo Think of a better way to handle file not found during installation
      * @return array
      */
-    private function getImposterAutoloads(): array
+    private function getImposterAutoloads() : array
     {
         try {
-            $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
+            $imposter = ImposterFactory::forProject(getcwd(), [ 'typisttech/imposter-plugin' ]);
 
             return array_map(function ($path) {
                 return str_replace(getcwd() . '/', '', $path);
@@ -121,7 +127,7 @@ class ImposterPlugin implements PluginInterface, Capable
      *
      * @return string[]
      */
-    public function getCapabilities(): array
+    public function getCapabilities() : array
     {
         return [
             CommandProvider::class => ImposterCommandProvider::class,
