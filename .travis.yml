@@ -44,4 +44,4 @@ before_script:
     - if [[ "$COMPOSER_DEPENDENCIES" == "" ]]; then travis_retry composer install --prefer-dist; fi
 
 script:
-    - vendor/bin/codecept run
+    - composer test
