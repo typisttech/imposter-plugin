@@ -9,10 +9,6 @@ tools:
     php_analyzer: true
     php_cpd: false
     php_code_coverage: false
-    php_code_sniffer:
-        config: { standard: psr2 }
-    php_cs_fixer:
-        config: { level: psr2 }
     php_loc: true
     php_mess_detector: true
     php_sim: true
@@ -127,8 +123,6 @@ checks:
         duplication: true
         deprecated_code_usage: true
         deadlock_detection_in_loops: true
-        custom_coding_standard:
-            ruleset_path: ruleset.xml
         comparison_always_same_result: true
         code_rating: true
         closure_use_not_conflicting: true
