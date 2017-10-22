@@ -22,8 +22,4 @@
 
     <rule ref="PSR2"/>
 
-    <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
-        <exclude-pattern>/tests/*</exclude-pattern>
-    </rule>
-
 </ruleset>

@@ -5,42 +5,42 @@ dist: trusty
 sudo: false
 
 branches:
-    only:
-        - master
-        - /^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$/
+  only:
+    - master
+    - /^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$/
 
-## Cache composer
 cache:
-    directories:
-        - $HOME/.composer/cache
+  directories:
+    - $HOME/.composer/cache/files
 
 notifications:
-    email:
-        on_success: never
-        on_failure: change
+  email:
+    on_success: never
+    on_failure: change
 
 php:
-    - 7.0
-    - 7.1
-    - nightly
+  - 7.0
+  - 7.1
+  - nightly
 
 env:
-    global:
-        - COMPOSER_NO_INTERACTION=1
-    matrix:
-        - COMPOSER_DEPENDENCIES="--prefer-lowest"
-        - COMPOSER_DEPENDENCIES=""
+  global:
+    - COMPOSER_NO_INTERACTION=1
+  matrix:
+    - COMPOSER_DEPENDENCIES="--prefer-lowest"
+    - COMPOSER_DEPENDENCIES=""
 
 matrix:
-    allow_failures:
-        - php: nightly
-    fast_finish: true
+  allow_failures:
+    - php: nightly
+  fast_finish: true
 
-before_script:
-    # Disable xDebug to speed up the build unless test coverage is needed
-    - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
+before_install:
+  # Disable xDebug to speed up the build unless test coverage is needed
+  - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
 
-    - travis_retry composer update --prefer-dist $COMPOSER_DEPENDENCIES
+install:
+  - travis_retry composer update --prefer-dist $COMPOSER_DEPENDENCIES
 
 script:
-    - composer test
+  - composer test

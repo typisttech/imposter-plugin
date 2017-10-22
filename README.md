@@ -7,7 +7,6 @@
 [![PHP Versions Tested](http://php-eye.com/badge/typisttech/imposter-plugin/tested.svg)](https://travis-ci.org/TypistTech/imposter-plugin)
 [![StyleCI](https://styleci.io/repos/85290139/shield?branch=master)](https://styleci.io/repos/85290139)
 [![Dependency Status](https://gemnasium.com/badges/github.com/TypistTech/imposter-plugin.svg)](https://gemnasium.com/github.com/TypistTech/imposter-plugin)
-[![Latest Unstable Version](https://poser.pugx.org/typisttech/imposter-plugin/v/unstable)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![License](https://poser.pugx.org/typisttech/imposter-plugin/license)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/imposter-plugin/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
@@ -51,7 +50,7 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
 ## Why?
 
 Because of the lack of dependency management in WordPress, if two plugins bundled conflicting versions of the same package, hard-to-reproduce bugs arise.
-Monkey patching composer vendor packages, wrapping them inside your own namespace is a less-than-ideal solution to avoid such conflicts. 
+Monkey patching composer vendor packages, wrapping them inside your own namespace is a less-than-ideal solution to avoid such conflicts.
 
 See:
 - [A Narrative of Using Composer in a WordPress Plugin](https://wptavern.com/a-narrative-of-using-composer-in-a-wordpress-plugin)
@@ -94,7 +93,7 @@ If you want to run Imposter manually:
 $ composer imposter:run
 ```
 
-**Note**: You need to run `$ composer dump-autoload` after this command. 
+**Note**: You need to run `$ composer dump-autoload` after this command.
 
 This command:
 1. Look for `/path/to/project/root/composer.json`
@@ -152,20 +151,20 @@ Yes for all. PSR-4 and PSR-0 autoloading, classmap generation and files includes
 
 ### Does Imposter Plugin support `exclude-from-classmap`?
 
-Not for now. 
+Not for now.
 Pull requests are welcome.
 
 ### How about `require-dev` packages?
 
-Imposter Plugin do nothing on `require-dev` packages because imposter-plugin is intended for avoiding production environment., not for development environment. 
+Imposter Plugin do nothing on `require-dev` packages because imposter-plugin is intended for avoiding production environment., not for development environment.
 
-### How about PHP built-in classes? 
+### How about PHP built-in classes?
 
 Imposter skips classes that on global namespace, for example: `ArrayObject`, `RuntimeException`
 
 ### How about packages that don't use namespaces?
 
-Not for now. 
+Not for now.
 Tell me your idea by [opening an issue](https://github.com/TypistTech/imposter-plugin/issues/new)
 
 ### How about packages that use fully qualified name?
@@ -173,16 +172,16 @@ Tell me your idea by [opening an issue](https://github.com/TypistTech/imposter-p
 Not for now. We need a better regex in the [Transformer](src/Transformer.php) class.
 Tell me your idea by [opening an issue](https://github.com/TypistTech/imposter-plugin/issues/new)
 
-## Support! 
+## Support!
 
 ### Donate via PayPal [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/imposter-plugin/)
 
-Love Imposter Plugin? Help me maintain Imposter Plugin, a [donation here](https://www.typist.tech/donate/imposter-plugin/) can help with it. 
+Love Imposter Plugin? Help me maintain Imposter Plugin, a [donation here](https://www.typist.tech/donate/imposter-plugin/) can help with it.
 
 ### Why don't you hire me?
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email info@typist.tech 
+Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email info@typist.tech
 
-### Want to help in other way? Want to be a sponsor? 
+### Want to help in other way? Want to be a sponsor?
 Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
 
 ## Alternatives
@@ -192,7 +191,7 @@ Here is a list of alternatives that I found. But none satisfied my requirements.
 *If you know other similar projects, feel free to edit this section!*
 
 * [Mozart](https://github.com/coenjacobs/mozart) by Coen Jacobs
-    - Works with PSR0 and PSR4 
+    - Works with PSR0 and PSR4
     - Dependency packages store in a different directory
 
 ## Developing
