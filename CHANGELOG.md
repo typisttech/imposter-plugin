@@ -1,10 +1,23 @@
 # Change Log
 
-## [0.2.5](https://github.com/TypistTech/imposter-plugin/tree/0.2.5) (2017-03-27)
+## [0.2.6](https://github.com/TypistTech/imposter-plugin/tree/0.2.6) (2017-10-22)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.5...0.2.6)
+
+**Merged pull requests:**
+
+- TravisCI: Run tests against lowest and highest dependencies [\#31](https://github.com/TypistTech/imposter-plugin/pull/31) ([TangRufus](https://github.com/TangRufus))
+- Scrutinizer: Remove `align\_assignments` [\#30](https://github.com/TypistTech/imposter-plugin/pull/30) ([TangRufus](https://github.com/TangRufus))
+- Fix broken link [\#29](https://github.com/TypistTech/imposter-plugin/pull/29) ([TangRufus](https://github.com/TangRufus))
+- composer update and make TravisCI happy [\#28](https://github.com/TypistTech/imposter-plugin/pull/28) ([TangRufus](https://github.com/TangRufus))
+- Rename: CONDUCT.md --\> CODE\_OF\_CONDUCT.md [\#27](https://github.com/TypistTech/imposter-plugin/pull/27) ([TangRufus](https://github.com/TangRufus))
+- Fix wrong link [\#25](https://github.com/TypistTech/imposter-plugin/pull/25) ([TangRufus](https://github.com/TangRufus))
+
+## [0.2.5](https://github.com/TypistTech/imposter-plugin/tree/0.2.5) (2017-03-26)
 [Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.4...0.2.5)
 
 **Merged pull requests:**
 
+- Version bump 0.2.5 [\#23](https://github.com/TypistTech/imposter-plugin/pull/23) ([TangRufus](https://github.com/TangRufus))
 - Fix: Type check correctly [\#22](https://github.com/TypistTech/imposter-plugin/pull/22) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.4](https://github.com/TypistTech/imposter-plugin/tree/0.2.4) (2017-03-25)

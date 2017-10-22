@@ -33,13 +33,13 @@
     "require": {
         "php": "^7.0",
         "composer-plugin-api": "^1.1",
-        "typisttech/imposter": "^0.2.0"
+        "typisttech/imposter": "^0.2.2"
     },
     "require-dev": {
         "codeception/base": "^2.3",
         "composer/composer": "^1.5",
         "squizlabs/php_codesniffer": "^3.1",
-        "typisttech/codeception-composer-project-module": "^0.1.0"
+        "typisttech/codeception-composer-project-module": "^0.1.1"
     },
     "autoload": {
         "psr-4": {
