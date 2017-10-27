@@ -1,16 +1,14 @@
 namespace: TypistTech\Imposter\Plugin
-actor: Tester
 paths:
     tests: tests
-    log: tests/_output
+    output: tests/_output
     data: tests/_data
     support: tests/_support
     envs: tests/_envs
+actor_suffix: Tester
 settings:
     bootstrap: _bootstrap.php
     shuffle: true
-    colors: true
-    memory_limit: 1024M
 extensions:
     enabled:
         - Codeception\Extension\RunFailed

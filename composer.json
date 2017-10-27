@@ -33,7 +33,7 @@
     "require": {
         "php": "^7.0",
         "composer-plugin-api": "^1.1",
-        "typisttech/imposter": "^0.2.2"
+        "typisttech/imposter": "^0.2.3"
     },
     "require-dev": {
         "codeception/base": "^2.3",
@@ -50,11 +50,11 @@
         "check-style": "phpcs --standard=ruleset.xml --colors -p -s .",
         "fix-style": "phpcbf -p --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 .",
         "pre-tag": [
-            "composer update",
             "doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
-        "test": "codecept run"
+        "test": "codecept run",
+        "test:functional": "codecept run functional"
     },
     "config": {
         "sort-packages": true

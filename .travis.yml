@@ -21,14 +21,12 @@ notifications:
 php:
   - 7.0
   - 7.1
+  - 7.2
   - nightly
 
 env:
   global:
     - COMPOSER_NO_INTERACTION=1
-  matrix:
-    - COMPOSER_DEPENDENCIES="--prefer-lowest"
-    - COMPOSER_DEPENDENCIES=""
 
 matrix:
   allow_failures:
@@ -40,7 +38,7 @@ before_install:
   - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
 
 install:
-  - travis_retry composer update --prefer-dist $COMPOSER_DEPENDENCIES
+  - travis_retry composer install --prefer-dist --no-suggest
 
 script:
   - composer test
