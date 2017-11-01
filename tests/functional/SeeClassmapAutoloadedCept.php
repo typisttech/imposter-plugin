@@ -2,7 +2,7 @@
 
 $I = new FunctionalTester($scenario);
 
-$I->wantToTest('Imposer adds classmap autoloads');
+$I->wantToTest('Imposter adds classmap autoloads');
 
 $I->openFile('vendor/composer/autoload_classmap.php');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\File\\\\DummyClass');
