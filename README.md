@@ -212,7 +212,7 @@ else:
 
 ### Why don't you hire me?
 
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email [info@typist.tech](info@typist.tech)
+Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email [infotypist.tech](mailto:info@typist.tech)
 
 ### Want to help in other way? Want to be a sponsor?
 
