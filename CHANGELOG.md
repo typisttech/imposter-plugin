@@ -1,10 +1,21 @@
 # Change Log
 
+## [0.3.0](https://github.com/TypistTech/imposter-plugin/tree/0.3.0) (2018-01-16)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.6...0.3.0)
+
+**Merged pull requests:**
+
+- Update typisttech/imposter to 0.3.0 [\#37](https://github.com/TypistTech/imposter-plugin/pull/37) ([TangRufus](https://github.com/TangRufus))
+- Fix email link [\#36](https://github.com/TypistTech/imposter-plugin/pull/36) ([TangRufus](https://github.com/TangRufus))
+- Fix typo [\#35](https://github.com/TypistTech/imposter-plugin/pull/35) ([TangRufus](https://github.com/TangRufus))
+- Misc: Typist Tech code style [\#33](https://github.com/TypistTech/imposter-plugin/pull/33) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.2.6](https://github.com/TypistTech/imposter-plugin/tree/0.2.6) (2017-10-22)
 [Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.5...0.2.6)
 
 **Merged pull requests:**
 
+- Version bump 0.2.6 [\#32](https://github.com/TypistTech/imposter-plugin/pull/32) ([TangRufus](https://github.com/TangRufus))
 - TravisCI: Run tests against lowest and highest dependencies [\#31](https://github.com/TypistTech/imposter-plugin/pull/31) ([TangRufus](https://github.com/TangRufus))
 - Scrutinizer: Remove `align\_assignments` [\#30](https://github.com/TypistTech/imposter-plugin/pull/30) ([TangRufus](https://github.com/TangRufus))
 - Fix broken link [\#29](https://github.com/TypistTech/imposter-plugin/pull/29) ([TangRufus](https://github.com/TangRufus))
