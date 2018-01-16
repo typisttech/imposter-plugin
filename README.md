@@ -117,6 +117,7 @@ use AnotherDummy\{
 use Dummy\SubOtherDummy;
 use OtherDummy\SubOtherDummy;
 use RuntimeException;
+use \UnexpectedValueException;
 
 class DummyClass
 {
@@ -135,6 +136,7 @@ use My\App\Vendor\AnotherDummy\{
 use My\App\Vendor\Dummy\SubOtherDummy;
 use My\App\Vendor\OtherDummy\SubOtherDummy;
 use RuntimeException;
+use \UnexpectedValueException;
 
 class DummyClass
 {
