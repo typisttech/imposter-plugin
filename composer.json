@@ -25,15 +25,10 @@
             "role": "Developer"
         }
     ],
-    "support": {
-        "email": "imposter-plugin@typist.tech",
-        "issues": "https://github.com/TypistTech/imposter-plugin/issues",
-        "source": "https://github.com/TypistTech/imposter-plugin"
-    },
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "composer-plugin-api": "^1.1",
-        "typisttech/imposter": "^0.3.0"
+        "typisttech/imposter": "^0.3.1"
     },
     "require-dev": {
         "codeception/base": "^2.3",
@@ -41,25 +36,35 @@
         "squizlabs/php_codesniffer": "^3.2",
         "typisttech/codeception-composer-project-module": "^0.1.1"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3.x-dev"
+        },
+        "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
+    },
     "autoload": {
         "psr-4": {
             "TypistTech\\Imposter\\Plugin\\": "src"
         }
     },
     "scripts": {
-        "check-style": "phpcs --standard=ruleset.xml --colors -p -s .",
-        "fix-style": "phpcbf -p --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 .",
-        "pre-tag": [
+        "check-style": "phpcs --colors -p",
+        "pretag": [
+            "composer update",
+            "@test",
+            "@check-style",
+            "composer normalize",
             "doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
-        "test": "codecept run",
-        "test:functional": "codecept run functional"
+        "test": "codecept run"
     },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
+    "support": {
+        "email": "imposter-plugin@typist.tech",
+        "issues": "https://github.com/TypistTech/imposter-plugin/issues",
+        "source": "https://github.com/TypistTech/imposter-plugin"
     }
 }

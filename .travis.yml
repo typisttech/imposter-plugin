@@ -1,7 +1,5 @@
 language: php
 
-dist: trusty
-
 sudo: false
 
 branches:
@@ -9,20 +7,15 @@ branches:
     - master
     - /^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$/
 
+## Cache composer
 cache:
   directories:
-    - $HOME/.composer/cache/files
+    - $HOME/.composer/cache
 
 notifications:
   email:
     on_success: never
     on_failure: change
-
-php:
-  - 7.0
-  - 7.1
-  - 7.2
-  - nightly
 
 env:
   global:
@@ -34,11 +27,19 @@ matrix:
   fast_finish: true
 
 before_install:
-  # Disable xDebug to speed up the build unless test coverage is needed
-  - if [[ $(phpenv version-name) != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini || true
 
 install:
-  - travis_retry composer install --prefer-dist --no-suggest
+  - travis_retry composer install --no-progress --no-suggest
 
 script:
   - composer test
+
+jobs:
+  include:
+    - stage: test
+      php: 7.2
+    - stage: test
+      php: 7.1
+    - stage: test
+      php: nightly
