@@ -21,7 +21,7 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
   - [Sit Back and Relax](#sit-back-and-relax)
   - [composer imposter:run](#composer-imposterrun)
 - [Frequently Asked Questions](#frequently-asked-questions)
-  - [What can I find out more information?](#what-can-i-find-out-more-information)
+  - [What can I find more information?](#what-can-i-find-more-information)
   - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
   - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
   - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
