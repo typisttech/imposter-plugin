@@ -1,10 +1,18 @@
 # Change Log
 
+## [0.3.1](https://github.com/TypistTech/imposter-plugin/tree/0.3.1) (2018-09-25)
+[Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.3.0...0.3.1)
+
+**Merged pull requests:**
+
+- Bikeshedding [\#40](https://github.com/TypistTech/imposter-plugin/pull/40) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.3.0](https://github.com/TypistTech/imposter-plugin/tree/0.3.0) (2018-01-16)
 [Full Changelog](https://github.com/TypistTech/imposter-plugin/compare/0.2.6...0.3.0)
 
 **Merged pull requests:**
 
+- Version bump 0.3.0 [\#38](https://github.com/TypistTech/imposter-plugin/pull/38) ([TangRufus](https://github.com/TangRufus))
 - Update typisttech/imposter to 0.3.0 [\#37](https://github.com/TypistTech/imposter-plugin/pull/37) ([TangRufus](https://github.com/TangRufus))
 - Fix email link [\#36](https://github.com/TypistTech/imposter-plugin/pull/36) ([TangRufus](https://github.com/TangRufus))
 - Fix typo [\#35](https://github.com/TypistTech/imposter-plugin/pull/35) ([TangRufus](https://github.com/TangRufus))
