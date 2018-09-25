@@ -1,12 +1,9 @@
 # Imposter Plugin
 
 [![Latest Stable Version](https://poser.pugx.org/typisttech/imposter-plugin/v/stable)](https://packagist.org/packages/typisttech/imposter-plugin)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Total Downloads](https://poser.pugx.org/typisttech/imposter-plugin/downloads)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Build Status](https://travis-ci.org/TypistTech/imposter-plugin.svg?branch=master)](https://travis-ci.org/TypistTech/imposter-plugin)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TypistTech/imposter-plugin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TypistTech/imposter-plugin/?branch=master)
-[![PHP Versions Tested](http://php-eye.com/badge/typisttech/imposter-plugin/tested.svg)](https://travis-ci.org/TypistTech/imposter-plugin)
-[![StyleCI](https://styleci.io/repos/85290139/shield?branch=master)](https://styleci.io/repos/85290139)
-[![Dependency Status](https://gemnasium.com/badges/github.com/TypistTech/imposter-plugin.svg)](https://gemnasium.com/github.com/TypistTech/imposter-plugin)
 [![License](https://poser.pugx.org/typisttech/imposter-plugin/license)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://typist.tech/donate/imposter-plugin/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://typist.tech/contact/)
@@ -25,24 +22,19 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
   - [composer imposter:run](#composer-imposterrun)
 - [Frequently Asked Questions](#frequently-asked-questions)
   - [What can I find out more information?](#what-can-i-find-out-more-information)
-  - [Does Imposter Plugin support `PSR4`, `PSR0`, `Classmap` and `Files`?](#does-imposter-plugin-support-psr4-psr0-classmap-and-files)
-  - [Does Imposter Plugin support `exclude-from-classmap`?](#does-imposter-plugin-support-exclude-from-classmap)
-  - [How about `require-dev` packages?](#how-about-require-dev-packages)
-  - [How about PHP built-in classes?](#how-about-php-built-in-classes)
-  - [How about packages that don't use namespaces?](#how-about-packages-that-dont-use-namespaces)
-  - [How about packages that use fully qualified name?](#how-about-packages-that-use-fully-qualified-name)
+  - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
   - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
-- [Support!](#support)
-  - [Donate](#donate)
+  - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
+  - [It looks awesome. Where can I find some more goodies like this?](#it-looks-awesome-where-can-i-find-some-more-goodies-like-this)
+  - [This package isn't on wp.org. Where can I give a :star::star::star::star::star: review?](#this-package-isnt-on-wporg-where-can-i-give-a-starstarstarstarstar-review)
+- [Alternatives](#alternatives)
+- [Support](#support)
   - [Why don't you hire me?](#why-dont-you-hire-me)
   - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
-- [Alternatives](#alternatives)
-- [Developing](#developing)
 - [Running the Tests](#running-the-tests)
 - [Feedback](#feedback)
 - [Change log](#change-log)
 - [Security](#security)
-- [Contributing](#contributing)
 - [Credits](#credits)
 - [License](#license)
 
@@ -84,17 +76,18 @@ See: [Imposter readme](https://github.com/Typisttech/imposter#config) for detail
 
 ### Sit Back and Relax
 
-Once installed, Imposter Plugin hooks into `composer install`, `composer update` and `composer dump-autoload`, automatically run [Imposter](https://github.com/TypistTech/imposter/) for you.
-Besides, Imposter Plugin autoloads all modified files as [classmap](https://getcomposer.org/doc/04-schema.md#classmap).
+Once installed, imposter plugin hooks into `composer install`, `composer update` and `composer dump-autoload`, automatically run [imposter](https://github.com/TypistTech/imposter/) for you.
+Besides, imposter plugin autoloads all modified files as [classmap](https://getcomposer.org/doc/04-schema.md#classmap).
 
 ### composer imposter:run
 
 If you want to run Imposter manually:
 ```bash
 $ composer imposter:run
+$ composer dump-autoload
 ```
 
-**Note**: You need to run `$ composer dump-autoload` after this command.
+**Note**: You need to run `$ composer dump-autoload` after every `$ composer imposter:run`.
 
 This command:
 1. Look for `/path/to/project/root/composer.json`
@@ -103,77 +96,17 @@ This command:
 4. Find out all [autoload paths](https://getcomposer.org/doc/04-schema.md#autoload) for all required packages
 5. Prefix all namespaces with the imposter-plugin namespace defined in your `composer.json`
 
-Before:
-```php
-<?php
-
-namespace Dummy\File;
-
-use AnotherDummy\{
-    SubAnotherDummy, SubOtherDummy
-};
-use Dummy\SubOtherDummy;
-use OtherDummy\SubOtherDummy;
-use RuntimeException;
-use \UnexpectedValueException;
-
-class DummyClass
-{
-}
-```
-
-After:
-```php
-<?php
-
-namespace My\App\Vendor\Dummy\File;
-
-use My\App\Vendor\AnotherDummy\{
-    SubAnotherDummy, SubOtherDummy
-};
-use My\App\Vendor\Dummy\SubOtherDummy;
-use My\App\Vendor\OtherDummy\SubOtherDummy;
-use RuntimeException;
-use \UnexpectedValueException;
-
-class DummyClass
-{
-}
-```
+Learn more on [imposter's readme](https://github.com/TypistTech/imposter#usage).
 
 ## Frequently Asked Questions
 
-### What can I find out more information?
+### What can I find more information?
 
-Imposter plugin is a composer plugin wrapper for [Imposter](https://github.com/TypistTech/imposter/).
-See: [Imposter](https://github.com/TypistTech/imposter/) for more details.
+Learn more on [imposter's readme](https://github.com/TypistTech/imposter/) for more details.
 
-### Does Imposter Plugin support `PSR4`, `PSR0`, `Classmap` and `Files`?
+### How about not hooking into composer commands?
 
-Yes for all. PSR-4 and PSR-0 autoloading, classmap generation and files includes are supported.
-
-### Does Imposter Plugin support `exclude-from-classmap`?
-
-Not for now.
-Pull requests are welcome.
-
-### How about `require-dev` packages?
-
-Imposter Plugin do nothing on `require-dev` packages because imposter-plugin is intended for avoiding production environment., not for development environment.
-
-### How about PHP built-in classes?
-
-Imposter skips classes that on global namespace, for example: `\ArrayObject`, `\RuntimeException`
-
-### How about packages that don't use namespaces?
-
-Not for now.
-Tell me your idea by [opening an issue](https://github.com/TypistTech/imposter-plugin/issues/new)
-
-### How about packages that use fully qualified name?
-
-Not for now. We need a better regex in the [Transformer](src/Transformer.php) class.
-Tell me your idea by [opening an issue](https://github.com/TypistTech/imposter-plugin/issues/new)
+Use [imposter](https://github.com/TypistTech/imposter/) directly.
 
 ### Do you have real life examples that use this composer plugin?
 
@@ -185,19 +118,25 @@ Here you go:
 
  *Add your own [here](https://github.com/TypistTech/imposter-plugin/edit/master/README.md)*
 
-## Support!
+### Will you add support for older PHP versions?
 
-### Donate
+Never! This package will only works on [actively supported PHP versions](https://secure.php.net/supported-versions.php).
+Don't use it on **end of life** or **security fixes only** PHP versions.
 
-Love Imposter Plugin? Help me maintain it, a [donation here](https://typist.tech/donate/imposter-plugin/) can help with it.
+### It looks awesome. Where can I find some more goodies like this?
 
-### Why don't you hire me?
+* Articles on Typist Tech's [blog](https://typist.tech)
+* [Tang Rufus' WordPress plugins](https://profiles.wordpress.org/tangrufus#content-plugins) on wp.org
+* More projects on [Typist Tech's GitHub profile](https://github.com/TypistTech)
+* Stay tuned on [Typist Tech's newsletter](https://typist.tech/go/newsletter)
+* Follow [Tang Rufus' Twitter account](https://twitter.com/TangRufus)
+* Hire [Tang Rufus](https://typist.tech/contact) to build your next awesome site
 
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://typist.tech/contact/) or, via email [info@typist.tech](mailto:info@typist.tech)
+### This package isn't on wp.org. Where can I give a :star::star::star::star::star: review?
 
-### Want to help in other way? Want to be a sponsor?
+Thanks!
 
-Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
+Consider writing a blog post, submitting pull requests, [donating](https://typist.tech/donation/) or [hiring me](https://typist.tech/contact/) instead.
 
 ## Alternatives
 
@@ -209,32 +148,29 @@ Here is a list of alternatives that I found. But none satisfied my requirements.
     - Works with PSR0 and PSR4
     - Dependency packages store in a different directory
 
-## Developing
+* [PHP Scoper](https://github.com/humbug/php-scoper)
+    - Prefixes all PHP namespaces in a file/directory to isolate the code bundled in PHARs
 
-To setup a developer workable version you should run these commands:
+## Support
 
-```bash
-$ composer create-project --keep-vcs --no-install typisttech/imposter-plugin:dev-master
-$ cd imposter-plugin
-$ composer install
-```
+Love `imposter-plugin`? Help me maintain it, a [donation here](https://typist.tech/donation/) can help with it.
+
+### Why don't you hire me?
+
+Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://typist.tech/contact/) or, via email [info@typist.tech](mailto:info@typist.tech)
+
+### Want to help in other way? Want to be a sponsor?
+
+Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
 
 ## Running the Tests
-
-[Imposter Plugin](https://github.com/TypistTech/imposter-plugin) run tests on [Codeception](http://codeception.com/).
 
 Run the tests:
 
 ``` bash
 $ composer test
-
-// Or, run with coverage support
-$ composer test-with-coverage
+$ composer check-style
 ```
-
-We also test all PHP files against [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/).
-
-Check the code style with ``$ composer check-style`` and fix it with ``$ composer fix-style``.
 
 ## Feedback
 
@@ -244,22 +180,18 @@ Please submit an [issue](https://github.com/TypistTech/imposter-plugin/issues/ne
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](./CHANGELOG.md) for more information on what has changed recently.
 
 ## Security
 
 If you discover any security related issues, please email imposter-plugin@typist.tech instead of using the issue tracker.
 
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md) for details.
-
 ## Credits
 
-[Imposter Plugin](https://github.com/TypistTech/imposter-plugin) is a [Typist Tech](https://typist.tech) project and maintained by [Tang Rufus](https://twitter.com/Tangrufus), freelance developer for [hire](https://typist.tech/contact/).
+[`imposter-plugin`](https://github.com/TypistTech/imposter-plugin) is a [Typist Tech](https://typist.tech) project and maintained by [Tang Rufus](https://twitter.com/TangRufus), freelance developer for [hire](https://www.typist.tech/contact/).
 
 Full list of contributors can be found [here](https://github.com/TypistTech/imposter-plugin/graphs/contributors).
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+The MIT License (MIT). Please see [License File](./LICENSE) for more information.
