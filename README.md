@@ -53,11 +53,7 @@ See:
 
 Installation should be done via composer, details of how to install composer can be found at [https://getcomposer.org/](https://getcomposer.org/).
 
-``` bash
-$ composer require typisttech/imposter-plugin
-```
-
-Then, config Imposter in your `composer.json`
+First, add Imposter configuration in your `composer.json`
 
 ```json
 "extra": {
@@ -68,6 +64,12 @@ Then, config Imposter in your `composer.json`
         ]
     }
 }
+```
+
+Then, install via composer cli
+
+``` bash
+$ composer require typisttech/imposter-plugin
 ```
 
 See: [Imposter readme](https://github.com/Typisttech/imposter#config) for details.
