@@ -51,7 +51,7 @@
         }
     },
     "scripts": {
-        "check-style": "phpcs --colors -p",
+        "style:check": "phpcs --colors -p",
         "pretag": [
             "composer update",
             "@test",
