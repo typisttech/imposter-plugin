@@ -1,11 +1,12 @@
 # Imposter Plugin
 
-[![Latest Stable Version](https://poser.pugx.org/typisttech/imposter-plugin/v/stable)](https://packagist.org/packages/typisttech/imposter-plugin)
+[![Packagist](https://img.shields.io/packagist/v/typisttech/imposter.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
+[![Packagist](https://img.shields.io/packagist/dt/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
-[![Total Downloads](https://poser.pugx.org/typisttech/imposter-plugin/downloads)](https://packagist.org/packages/typisttech/imposter-plugin)
-[![Build Status](https://travis-ci.org/TypistTech/imposter-plugin.svg?branch=master)](https://travis-ci.org/TypistTech/imposter-plugin)
-[![License](https://poser.pugx.org/typisttech/imposter-plugin/license)](https://packagist.org/packages/typisttech/imposter-plugin)
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://typist.tech/donate/imposter-plugin/)
+[![CircleCI](https://circleci.com/gh/TypistTech/imposter-plugin.svg?style=svg)](https://circleci.com/gh/TypistTech/imposter-plugin)
+[![License](https://img.shields.io/github/license/TypistTech/imposter-plugin.svg)](https://github.com/TypistTech/imposter-plugin/blob/master/LICENSE.md)
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa)](https://github.com/sponsors/TangRufus)
+[![Sponsor via PayPal](https://img.shields.io/badge/Sponsor-PayPal-blue.svg)](https://typist.tech/donate/imposter-plugin/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://typist.tech/contact/)
 
 Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins.
