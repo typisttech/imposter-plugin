@@ -1,16 +1,4 @@
 <?php
-/**
- * Imposter Plugin
- *
- * Composer plugin that wraps all composer vendor packages inside your own namespace.
- * Intended for WordPress plugins.
- *
- * @package   TypistTech\Imposter\Plugin
- * @author    Typist Tech <imposter-plugin@typist.tech>
- * @copyright 2017 Typist Tech
- * @license   MIT
- * @see       https://www.typist.tech/projects/imposter-plugin
- */
 
 declare(strict_types=1);
 
@@ -64,7 +52,7 @@ class ImposterPlugin implements PluginInterface, Capable
         $package->setScripts($scripts);
     }
 
-    private function getScripts() : array
+    private function getScripts(): array
     {
         return [
             ScriptEvents::POST_INSTALL_CMD  => [
@@ -96,7 +84,7 @@ class ImposterPlugin implements PluginInterface, Capable
      * @todo Think of a better way to handle file not found during installation
      * @return array
      */
-    private function getImposterAutoloads() : array
+    private function getImposterAutoloads(): array
     {
         try {
             $imposter = ImposterFactory::forProject(getcwd(), [ 'typisttech/imposter-plugin' ]);
@@ -127,7 +115,7 @@ class ImposterPlugin implements PluginInterface, Capable
      *
      * @return string[]
      */
-    public function getCapabilities() : array
+    public function getCapabilities(): array
     {
         return [
             CommandProvider::class => ImposterCommandProvider::class,
