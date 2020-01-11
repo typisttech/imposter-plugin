@@ -3,8 +3,4 @@
 /tests/_support/_generated/
 
 ### Composer ###
-/composer.lock
 /vendor/
-
-### PhpStorm ###
-/.idea/
