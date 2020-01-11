@@ -15,28 +15,29 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Why?](#why)
-- [Install](#install)
-- [Usage](#usage)
-  - [Sit Back and Relax](#sit-back-and-relax)
-  - [composer imposter:run](#composer-imposterrun)
-- [Frequently Asked Questions](#frequently-asked-questions)
-  - [What can I find more information?](#what-can-i-find-more-information)
-  - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
-  - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
-  - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
-  - [It looks awesome. Where can I find some more goodies like this?](#it-looks-awesome-where-can-i-find-some-more-goodies-like-this)
-  - [This package isn't on wp.org. Where can I give a :star::star::star::star::star: review?](#this-package-isnt-on-wporg-where-can-i-give-a-starstarstarstarstar-review)
-- [Alternatives](#alternatives)
-- [Support](#support)
-  - [Why don't you hire me?](#why-dont-you-hire-me)
-  - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
-- [Running the Tests](#running-the-tests)
-- [Feedback](#feedback)
-- [Change log](#change-log)
-- [Security](#security)
-- [Credits](#credits)
-- [License](#license)
+- [Imposter Plugin](#imposter-plugin)
+  - [Why?](#why)
+  - [Install](#install)
+  - [Usage](#usage)
+    - [Sit Back and Relax](#sit-back-and-relax)
+    - [composer imposter:run](#composer-imposterrun)
+  - [Frequently Asked Questions](#frequently-asked-questions)
+    - [What can I find more information?](#what-can-i-find-more-information)
+    - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
+    - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
+    - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
+    - [It looks awesome. Where can I find some more goodies like this?](#it-looks-awesome-where-can-i-find-some-more-goodies-like-this)
+    - [This package isn't on wp.org. Where can I give a :star::star::star::star::star: review?](#this-package-isnt-on-wporg-where-can-i-give-a-starstarstarstarstar-review)
+  - [Alternatives](#alternatives)
+  - [Support](#support)
+    - [Why don't you hire me?](#why-dont-you-hire-me)
+    - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
+  - [Running the Tests](#running-the-tests)
+  - [Feedback](#feedback)
+  - [Change log](#change-log)
+  - [Security](#security)
+  - [Credits](#credits)
+  - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -171,7 +172,7 @@ Run the tests:
 
 ``` bash
 $ composer test
-$ composer check-style
+$ composer style:check
 ```
 
 ## Feedback

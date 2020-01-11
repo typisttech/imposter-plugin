@@ -57,7 +57,7 @@
             "@test",
             "@check-style",
             "composer normalize",
-            "doctoc README.md",
+            "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
         "test": "codecept run --debug"
