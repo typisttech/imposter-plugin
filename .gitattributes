@@ -8,5 +8,6 @@
 /bin            -export-ignore
 /src            -export-ignore
 /composer.json  -export-ignore
+/composer.lock  -export-ignore
 /LICENSE        -export-ignore
 /README.md      -export-ignore
