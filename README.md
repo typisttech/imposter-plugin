@@ -1,6 +1,6 @@
 # Imposter Plugin
 
-[![Packagist](https://img.shields.io/packagist/v/typisttech/imposter.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
+[![Packagist](https://img.shields.io/packagist/v/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![Packagist](https://img.shields.io/packagist/dt/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/typisttech/imposter-plugin.svg)](https://packagist.org/packages/typisttech/imposter-plugin)
 [![CircleCI](https://circleci.com/gh/TypistTech/imposter-plugin.svg?style=svg)](https://circleci.com/gh/TypistTech/imposter-plugin)
