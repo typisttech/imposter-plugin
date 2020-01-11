@@ -57,11 +57,10 @@
             "@test",
             "@check-style",
             "composer normalize",
-            "doctoc README.md",
+            "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
-        "test": "codecept run --debug",
-        "test:coverage": "codecept run --coverage --coverage-html --coverage-xml"
+        "test": "codecept run --debug"
     },
     "support": {
         "email": "imposter-plugin@typist.tech",
