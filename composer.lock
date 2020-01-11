@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62ad9cd3dbb8e7f27102ed5192c2cf73",
+    "content-hash": "bd5de48156b85f566fea62c09376af0f",
     "packages": [
         {
             "name": "typisttech/imposter",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypistTech/imposter.git",
-                "reference": "ac19913add442c85309d96fb9789627f152e7c93"
+                "reference": "76406c9a957d71c986fb752fa048b63d5d9596a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/ac19913add442c85309d96fb9789627f152e7c93",
-                "reference": "ac19913add442c85309d96fb9789627f152e7c93",
+                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/76406c9a957d71c986fb752fa048b63d5d9596a5",
+                "reference": "76406c9a957d71c986fb752fa048b63d5d9596a5",
                 "shasum": ""
             },
             "require": {
@@ -69,7 +69,7 @@
                 "namespace",
                 "wordpress"
             ],
-            "time": "2020-01-11T18:28:22+00:00"
+            "time": "2020-01-11T19:53:10+00:00"
         }
     ],
     "packages-dev": [
