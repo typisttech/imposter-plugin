@@ -28,7 +28,7 @@
     "require": {
         "php": "^7.2",
         "composer-plugin-api": "^1.1",
-        "typisttech/imposter": "^0.4.0"
+        "typisttech/imposter": "^0.4.1"
     },
     "require-dev": {
         "codeception/base": "^3.1",
@@ -41,7 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3.x-dev"
+            "dev-master": "0.4.x-dev"
         },
         "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
     },
@@ -51,15 +51,15 @@
         }
     },
     "scripts": {
-        "style:check": "phpcs --colors -p",
         "pretag": [
             "composer update",
             "@test",
-            "@check-style",
+            "@style:check",
             "composer normalize",
             "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
+        "style:check": "phpcs --colors -p",
         "test": "codecept run --debug"
     },
     "support": {
