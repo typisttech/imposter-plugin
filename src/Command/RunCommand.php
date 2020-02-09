@@ -31,12 +31,15 @@ EOT
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->write('<comment>Running Imposter...</comment>', true);
-        $output->write('<comment>======================</comment>', true);
-        $output->write('Loading package information from <info>' . getcwd() . '/composer.json</info>', true);
+        // Print an empty line to separate imposter outputs.
+        $output->writeln('');
+        $output->writeln('');
+        $output->writeln('<info>Running Imposter...</info>');
+        $output->writeln('<info>======================</info>');
+        $output->writeln('Loading package information from <info>' . getcwd() . '/composer.json</info>');
 
         $count = count($this->getAutoloads());
-        $output->write("Imposter operations: <info>$count</info> transformations", true);
+        $output->writeln("Imposter operations: <info>$count</info> transformations");
 
         $progressBar = new ProgressBar($output, $count);
         $progressBar->start();
@@ -44,7 +47,7 @@ EOT
         $autoloads = $this->getAutoloads();
         array_walk($autoloads, function ($autoload) use ($output, $progressBar) {
             $progressBar->clear();
-            $output->write(" - Transforming: <comment>$autoload</comment>", true);
+            $output->writeln(" - Transforming: <comment>$autoload</comment>");
             $progressBar->display();
 
             $this->transform($autoload);
@@ -53,8 +56,12 @@ EOT
         });
 
         $progressBar->finish();
-        $output->write(PHP_EOL);
-        $output->write('<info>Done.</info>', true);
+
+        // Print empty lines to separate imposter outputs.
+        $output->writeln('');
+        $output->writeln('<info>Success: Imposter transformed vendor files.</info>');
+        $output->writeln('');
+        $output->writeln('');
     }
 
     /**

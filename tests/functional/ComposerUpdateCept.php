@@ -5,7 +5,7 @@ $I->wantToTest('vendor files transformed during update');
 
 $I->runComposerCommand('update --no-interaction --no-ansi --prefer-dist --no-suggest');
 
-$I->seeInShellOutput('Running Imposter');
+$I->seeInShellOutput(PHP_EOL . PHP_EOL . 'Running Imposter');
 
 $I->assertTransformed('vendor/dummy/dummy/DummyClass.php');
 $I->assertTransformed('vendor/dummy/dummy-psr4/src/DummyOne.php');
@@ -17,3 +17,5 @@ $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\File\\\\DummyClass');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\DummyOne');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\DummyTwo');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\Sub\\\\DummyOne');
+
+$I->seeInShellOutput(PHP_EOL . PHP_EOL . 'Success: Imposter transformed vendor files.' . PHP_EOL . PHP_EOL);
