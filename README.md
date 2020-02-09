@@ -20,7 +20,6 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
 - [Install](#install)
 - [Usage](#usage)
   - [Sit Back and Relax](#sit-back-and-relax)
-  - [composer imposter:run](#composer-imposterrun)
 - [Frequently Asked Questions](#frequently-asked-questions)
   - [What can I find more information?](#what-can-i-find-more-information)
   - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
@@ -80,25 +79,15 @@ See: [Imposter readme](https://github.com/Typisttech/imposter#config) for detail
 
 ### Sit Back and Relax
 
-Once installed, imposter plugin hooks into `composer install`, `composer update` and `composer dump-autoload`, automatically run [imposter](https://github.com/TypistTech/imposter/) for you.
+Once installed, this plugin hooks into `composer install`, `composer update` and `composer dump-autoload`, automatically run [imposter](https://github.com/TypistTech/imposter/) for you.
 Besides, imposter plugin autoloads all modified files as [classmap](https://getcomposer.org/doc/04-schema.md#classmap).
 
-### composer imposter:run
-
-If you want to run Imposter manually:
-```bash
-$ composer imposter:run
-$ composer dump-autoload
-```
-
-**Note**: You need to run `$ composer dump-autoload` after every `$ composer imposter:run`.
-
-This command:
-1. Look for `/path/to/project/root/composer.json`
-2. Find out [vendor-dir](https://getcomposer.org/doc/06-config.md#vendor-dir)
-3. Find out all [required packages](https://getcomposer.org/doc/04-schema.md#require), including those required by dependencies
-4. Find out all [autoload paths](https://getcomposer.org/doc/04-schema.md#autoload) for all required packages
-5. Prefix all namespaces with the imposter-plugin namespace defined in your `composer.json`
+When those events triggered, this plugin:
+1. looks for `/path/to/project/root/composer.json`
+2. finds out [vendor-dir](https://getcomposer.org/doc/06-config.md#vendor-dir)
+3. finds out all [required packages](https://getcomposer.org/doc/04-schema.md#require), including those required by dependencies
+4. finds out all [autoload paths](https://getcomposer.org/doc/04-schema.md#autoload) for all required packages
+5. prefixes all namespaces with the imposter-plugin namespace defined in your `composer.json`
 
 Learn more on [imposter's readme](https://github.com/TypistTech/imposter#usage).
 
