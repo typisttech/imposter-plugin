@@ -5,7 +5,7 @@ $I->wantToTest('vendor files transformed during dump autoload');
 
 $I->runComposerCommand('dump-autoload --no-interaction --no-ansi');
 
-$I->seeInShellOutput('Running Imposter');
+$I->seeInShellOutput(PHP_EOL . PHP_EOL . 'Running Imposter');
 
 $I->wantTo('check vendor files transformed');
 $I->assertTransformed('vendor/dummy/dummy/DummyClass.php');
@@ -19,3 +19,5 @@ $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\File\\\\DummyClass');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\DummyOne');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\DummyTwo');
 $I->seeInThisFile('MyPlugin\\\\Vendor\\\\Dummy\\\\Psr4\\\\Sub\\\\DummyOne');
+
+$I->seeInShellOutput(PHP_EOL . PHP_EOL . 'Success: Imposter transformed vendor files.' . PHP_EOL . PHP_EOL);
