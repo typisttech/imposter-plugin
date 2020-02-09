@@ -34,8 +34,8 @@ EOT
         // Print an empty line to separate imposter outputs.
         $output->writeln('');
         $output->writeln('');
-        $output->writeln('<comment>Running Imposter...</comment>');
-        $output->writeln('<comment>======================</comment>');
+        $output->writeln('<info>Running Imposter...</info>');
+        $output->writeln('<info>======================</info>');
         $output->writeln('Loading package information from <info>' . getcwd() . '/composer.json</info>');
 
         $count = count($this->getAutoloads());
