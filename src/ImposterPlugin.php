@@ -8,16 +8,13 @@ use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
 use Composer\Package\RootPackageInterface;
-use Composer\Plugin\Capability\CommandProvider;
-use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\Event;
 use Composer\Script\ScriptEvents;
 use RuntimeException;
 use TypistTech\Imposter\ImposterFactory;
-use TypistTech\Imposter\Plugin\Capability\CommandProvider as ImposterCommandProvider;
 
-class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterface
+class ImposterPlugin implements PluginInterface, EventSubscriberInterface
 {
     /**
      * Apply plugin modifications to Composer
@@ -82,15 +79,5 @@ class ImposterPlugin implements PluginInterface, Capable, EventSubscriberInterfa
         } catch (RuntimeException $exception) {
             return [];
         }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCapabilities(): array
-    {
-        return [
-            CommandProvider::class => ImposterCommandProvider::class,
-        ];
     }
 }
