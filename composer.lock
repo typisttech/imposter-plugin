@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58ed5d23c4b4501b517fc6998ad8f840",
+    "content-hash": "3a583d431a672c5f723fc3931124c28d",
     "packages": [
         {
             "name": "typisttech/imposter",
