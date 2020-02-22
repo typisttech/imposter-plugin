@@ -31,6 +31,12 @@ class ImposterPlugin implements PluginInterface, EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
+            ScriptEvents::POST_INSTALL_CMD => [
+                ['transform', PHP_INT_MAX - 1000],
+            ],
+            ScriptEvents::POST_UPDATE_CMD => [
+                ['transform', PHP_INT_MAX - 1000],
+            ],
             ScriptEvents::PRE_AUTOLOAD_DUMP => [
                 ['transform', PHP_INT_MAX - 1000],
             ],
