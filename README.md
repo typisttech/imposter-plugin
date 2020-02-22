@@ -21,6 +21,7 @@ Imposter Plugin is a composer plugin wrapper for [Imposter](https://github.com/T
 - [Install](#install)
 - [Usage](#usage)
   - [Sit Back and Relax](#sit-back-and-relax)
+- [Known Issues](#known-issues)
 - [Frequently Asked Questions](#frequently-asked-questions)
   - [What can I find more information?](#what-can-i-find-more-information)
   - [How about not hooking into composer commands?](#how-about-not-hooking-into-composer-commands)
@@ -91,6 +92,14 @@ When those events triggered, this plugin:
 5. prefixes all namespaces with the imposter-plugin namespace defined in your `composer.json`
 
 Learn more on [imposter's readme](https://github.com/TypistTech/imposter#usage).
+
+## Known Issues
+
+Help wanted. Pull requests are welcomed.
+
+1. Imposter run twice when `composer install` and `composer update`
+1. Traits are not transformed
+1. Virtual packages are not supported
 
 ## Frequently Asked Questions
 
