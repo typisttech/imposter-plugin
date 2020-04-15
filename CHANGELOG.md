@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.6.0](https://github.com/typisttech/imposter-plugin/tree/0.6.0) (2020-04-15)
+
+[Full Changelog](https://github.com/typisttech/imposter-plugin/compare/0.5.0...0.6.0)
+
+**Merged pull requests:**
+
+- composer update [\#150](https://github.com/TypistTech/imposter-plugin/pull/150) ([TangRufus](https://github.com/TangRufus))
+- Bump typisttech/imposter from 0.4.1 to 0.5.0 [\#149](https://github.com/TypistTech/imposter-plugin/pull/149) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump composer/composer from 1.10.1 to 1.10.4 [\#146](https://github.com/TypistTech/imposter-plugin/pull/146) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump composer/ca-bundle from 1.2.6 to 1.2.7 [\#145](https://github.com/TypistTech/imposter-plugin/pull/145) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/process from 5.0.5 to 5.0.7 [\#144](https://github.com/TypistTech/imposter-plugin/pull/144) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/finder from 5.0.5 to 5.0.7 [\#142](https://github.com/TypistTech/imposter-plugin/pull/142) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump phpunit/phpunit from 8.5.2 to 8.5.3 [\#141](https://github.com/TypistTech/imposter-plugin/pull/141) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/event-dispatcher from 5.0.6 to 5.0.7 [\#140](https://github.com/TypistTech/imposter-plugin/pull/140) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/yaml from 5.0.6 to 5.0.7 [\#139](https://github.com/TypistTech/imposter-plugin/pull/139) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/filesystem from 5.0.6 to 5.0.7 [\#138](https://github.com/TypistTech/imposter-plugin/pull/138) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/console from 5.0.6 to 5.0.7 [\#137](https://github.com/TypistTech/imposter-plugin/pull/137) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/event-dispatcher from 5.0.5 to 5.0.6 [\#136](https://github.com/TypistTech/imposter-plugin/pull/136) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/console from 5.0.5 to 5.0.6 [\#135](https://github.com/TypistTech/imposter-plugin/pull/135) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/filesystem from 5.0.5 to 5.0.6 [\#134](https://github.com/TypistTech/imposter-plugin/pull/134) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/yaml from 5.0.5 to 5.0.6 [\#133](https://github.com/TypistTech/imposter-plugin/pull/133) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/polyfill-ctype from 1.14.0 to 1.15.0 [\#132](https://github.com/TypistTech/imposter-plugin/pull/132) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/polyfill-mbstring from 1.14.0 to 1.15.0 [\#131](https://github.com/TypistTech/imposter-plugin/pull/131) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/polyfill-php73 from 1.14.0 to 1.15.0 [\#130](https://github.com/TypistTech/imposter-plugin/pull/130) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump psr/log from 1.1.2 to 1.1.3 [\#129](https://github.com/TypistTech/imposter-plugin/pull/129) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump codeception/codeception from 4.1.3 to 4.1.4 [\#128](https://github.com/TypistTech/imposter-plugin/pull/128) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump codeception/codeception from 4.1.2 to 4.1.3 [\#127](https://github.com/TypistTech/imposter-plugin/pull/127) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump behat/gherkin from 4.6.1 to 4.6.2 [\#126](https://github.com/TypistTech/imposter-plugin/pull/126) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump codeception/codeception from 4.1.1 to 4.1.2 [\#125](https://github.com/TypistTech/imposter-plugin/pull/125) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump composer/composer from 1.10.0 to 1.10.1 [\#124](https://github.com/TypistTech/imposter-plugin/pull/124) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/event-dispatcher from 4.4.5 to 5.0.5 [\#123](https://github.com/TypistTech/imposter-plugin/pull/123) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump composer/composer from 1.9.3 to 1.10.0 [\#122](https://github.com/TypistTech/imposter-plugin/pull/122) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump phpspec/prophecy from 1.10.2 to 1.10.3 [\#121](https://github.com/TypistTech/imposter-plugin/pull/121) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/yaml from 5.0.4 to 5.0.5 [\#120](https://github.com/TypistTech/imposter-plugin/pull/120) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/filesystem from 4.4.4 to 4.4.5 [\#118](https://github.com/TypistTech/imposter-plugin/pull/118) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/process from 4.4.4 to 4.4.5 [\#117](https://github.com/TypistTech/imposter-plugin/pull/117) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/console from 4.4.4 to 4.4.5 [\#116](https://github.com/TypistTech/imposter-plugin/pull/116) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/event-dispatcher from 4.4.4 to 4.4.5 [\#115](https://github.com/TypistTech/imposter-plugin/pull/115) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/finder from 4.4.4 to 4.4.5 [\#114](https://github.com/TypistTech/imposter-plugin/pull/114) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump symfony/css-selector from 5.0.4 to 5.0.5 [\#113](https://github.com/TypistTech/imposter-plugin/pull/113) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump composer/xdebug-handler from 1.4.0 to 1.4.1 [\#112](https://github.com/TypistTech/imposter-plugin/pull/112) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump phpdocumentor/type-resolver from 1.0.1 to 1.1.0 [\#111](https://github.com/TypistTech/imposter-plugin/pull/111) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump behat/gherkin from 4.6.0 to 4.6.1 [\#110](https://github.com/TypistTech/imposter-plugin/pull/110) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump phpdocumentor/reflection-docblock from 5.0.0 to 5.1.0 [\#109](https://github.com/TypistTech/imposter-plugin/pull/109) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
 ## [0.5.0](https://github.com/typisttech/imposter-plugin/tree/0.5.0) (2020-02-22)
 
 [Full Changelog](https://github.com/typisttech/imposter-plugin/compare/0.4.0...0.5.0)
@@ -11,6 +56,7 @@
 
 **Merged pull requests:**
 
+- Version bump 0.5.0 [\#107](https://github.com/TypistTech/imposter-plugin/pull/107) ([TangRufus](https://github.com/TangRufus))
 - Run `composer dump-autoload --optimize` after composer update and composer install [\#106](https://github.com/TypistTech/imposter-plugin/pull/106) ([TangRufus](https://github.com/TangRufus))
 - Revert "Hook into post install and post update events" [\#105](https://github.com/TypistTech/imposter-plugin/pull/105) ([TangRufus](https://github.com/TangRufus))
 - Update Codeception [\#104](https://github.com/TypistTech/imposter-plugin/pull/104) ([TangRufus](https://github.com/TangRufus))
@@ -114,7 +160,6 @@
 - composer update and make TravisCI happy [\#28](https://github.com/TypistTech/imposter-plugin/pull/28) ([TangRufus](https://github.com/TangRufus))
 - Rename: CONDUCT.md --\> CODE\_OF\_CONDUCT.md [\#27](https://github.com/TypistTech/imposter-plugin/pull/27) ([TangRufus](https://github.com/TangRufus))
 - Fix wrong link [\#25](https://github.com/TypistTech/imposter-plugin/pull/25) ([TangRufus](https://github.com/TangRufus))
-- Fix: Type check correctly [\#22](https://github.com/TypistTech/imposter-plugin/pull/22) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.5](https://github.com/typisttech/imposter-plugin/tree/0.2.5) (2017-03-26)
 
@@ -123,6 +168,7 @@
 **Merged pull requests:**
 
 - Version bump 0.2.5 [\#23](https://github.com/TypistTech/imposter-plugin/pull/23) ([TangRufus](https://github.com/TangRufus))
+- Fix: Type check correctly [\#22](https://github.com/TypistTech/imposter-plugin/pull/22) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.4](https://github.com/typisttech/imposter-plugin/tree/0.2.4) (2017-03-25)
 
