@@ -6,6 +6,7 @@ namespace TypistTech\Imposter\Plugin;
 
 use Composer\IO\IOInterface;
 use TypistTech\Imposter\ImposterFactory;
+use TypistTech\Imposter\PathNotFoundException;
 
 class Transformer
 {
@@ -25,7 +26,11 @@ class Transformer
         $index = 1;
         foreach ($autoloads as $autoload) {
             $io->write(" - <comment>$index/$count</comment>: Transforming $autoload", true);
-            $imposter->transform($autoload);
+            try {
+	            $imposter->transform($autoload);
+            } catch (PathNotFoundException $exception) {
+            	$io->write("   <comment>Warning: Path $autoload not found</comment>", true);
+            }
             $index++;
         };
 
