@@ -27,9 +27,9 @@ class Transformer
         foreach ($autoloads as $autoload) {
             $io->write(" - <comment>$index/$count</comment>: Transforming $autoload", true);
             try {
-	            $imposter->transform($autoload);
+                $imposter->transform($autoload);
             } catch (PathNotFoundException $exception) {
-            	$io->write("   <comment>Warning: Path $autoload not found</comment>", true);
+                $io->write("   <comment>Warning: Path $autoload not found</comment>", true);
             }
             $index++;
         };
