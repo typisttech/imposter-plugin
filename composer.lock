@@ -266,16 +266,16 @@
         },
         {
             "name": "codeception/module-asserts",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/module-asserts.git",
-                "reference": "87c83ca3ccfbc0d79f5effb57e1f82eeaab0cb3e"
+                "reference": "f9bfbb4be4b993f5b315eba9eecaa1b358c2fcd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/module-asserts/zipball/87c83ca3ccfbc0d79f5effb57e1f82eeaab0cb3e",
-                "reference": "87c83ca3ccfbc0d79f5effb57e1f82eeaab0cb3e",
+                "url": "https://api.github.com/repos/Codeception/module-asserts/zipball/f9bfbb4be4b993f5b315eba9eecaa1b358c2fcd2",
+                "reference": "f9bfbb4be4b993f5b315eba9eecaa1b358c2fcd2",
                 "shasum": ""
             },
             "require": {
@@ -314,7 +314,7 @@
                 "asserts",
                 "codeception"
             ],
-            "time": "2019-11-13T17:32:27+00:00"
+            "time": "2020-04-18T10:01:11+00:00"
         },
         {
             "name": "codeception/module-cli",
