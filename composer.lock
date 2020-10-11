@@ -347,20 +347,20 @@
         },
         {
             "name": "codeception/module-cli",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/module-cli.git",
-                "reference": "ca35844de0392356b413e93dba52423aaf1a67a6"
+                "reference": "74736cd5abd400b5d1f8388a7a9cb3f9f7d16c7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/module-cli/zipball/ca35844de0392356b413e93dba52423aaf1a67a6",
-                "reference": "ca35844de0392356b413e93dba52423aaf1a67a6",
+                "url": "https://api.github.com/repos/Codeception/module-cli/zipball/74736cd5abd400b5d1f8388a7a9cb3f9f7d16c7b",
+                "reference": "74736cd5abd400b5d1f8388a7a9cb3f9f7d16c7b",
                 "shasum": ""
             },
             "require": {
-                "codeception/codeception": "*@dev",
+                "codeception/codeception": "^4.0",
                 "php": ">=5.6.0 <8.0"
             },
             "conflict": {
@@ -389,7 +389,7 @@
             "keywords": [
                 "codeception"
             ],
-            "time": "2020-02-07T17:34:13+00:00"
+            "time": "2020-10-11T18:34:36+00:00"
         },
         {
             "name": "codeception/module-filesystem",
