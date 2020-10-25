@@ -35,7 +35,7 @@
         "codeception/module-asserts": "^1.1",
         "codeception/module-cli": "^1.0",
         "codeception/module-filesystem": "^1.0",
-        "composer/composer": "^1.9",
+        "composer/composer": "^2.0",
         "squizlabs/php_codesniffer": "^3.5",
         "typisttech/codeception-composer-project-module": "^0.1.1"
     },
