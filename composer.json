@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "composer-plugin-api": "^1.1",
+        "composer-plugin-api": "^1.1 || ^2",
         "typisttech/imposter": "^0.5.0"
     },
     "require-dev": {
@@ -36,6 +36,7 @@
         "codeception/module-cli": "^1.0",
         "codeception/module-filesystem": "^1.0",
         "composer/composer": "^1.9",
+        "phpstan/phpstan": "^0.12.56",
         "squizlabs/php_codesniffer": "^3.5",
         "typisttech/codeception-composer-project-module": "^0.1.1"
     },
@@ -63,7 +64,8 @@
             "github_changelog_generator --no-verbose"
         ],
         "style:check": "phpcs --colors -p",
-        "test": "codecept run --debug"
+        "test": "codecept run --debug",
+        "analyze": "@php ./vendor/bin/phpstan analyze src"
     },
     "support": {
         "email": "imposter-plugin@typist.tech",
