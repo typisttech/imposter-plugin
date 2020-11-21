@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "composer-plugin-api": "^1.1",
+        "composer-plugin-api": "^1.1 || ^2",
         "typisttech/imposter": "^0.5.0"
     },
     "require-dev": {
