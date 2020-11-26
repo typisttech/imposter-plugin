@@ -1,49 +1,52 @@
 version: 2.1
 
 orbs:
-  composer: itinerisltd/composer@0.3
+  php: circleci/php@1
+
+jobs:
+  test-composer-v1:
+    executor:
+      name: php/default
+      tag: << parameters.version >>
+    parameters:
+      version:
+        type: string
+    environment:
+      EXPECT_COMPOSER_V1: true
+    steps:
+      - checkout
+      - php/install-composer:
+          install-version: 1.10.16
+      - run: php -v
+      - run: composer --version
+      - restore_cache:
+          keys:
+            - composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
+      - run: composer update --prefer-lowest --no-interaction --prefer-dist
+      - save_cache:
+            key: composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
+            paths:
+              - /home/circleci/project/composer.lock
+              - /home/circleci/.composer/cache/files
+      - run: composer test
 
 workflows:
   test:
     jobs:
-      - composer/install:
-          name: test-latest
-          executor: composer/latest
-          post-steps:
-            - composer/exec:
-                command: test
+      - test-composer-v1:
+          name: test-composer-v1-php-<< matrix.version >>
+          matrix:
+            parameters:
+              version: ["7.4", "7.3" ]
+      - php/test:
+          name: test-php-<< matrix.version >>
+          matrix:
+            parameters:
+              version: ["7.4", "7.3"]
+      - php/test:
+          name: style-check-php-<< matrix.version >>
+          test-command: style:check
+          matrix:
+            parameters:
+              version: ["7.4", "7.3"]
 
-      - composer/install:
-          name: test-7.4
-          executor: composer/php-74
-          post-steps:
-            - composer/exec:
-                command: test
-
-      - composer/install:
-          name: test-7.3
-          executor: composer/php-73
-          post-steps:
-            - composer/exec:
-                command: test
-
-      - composer/install:
-          name: test-7.2
-          executor: composer/php-72
-          post-steps:
-            - composer/exec:
-                command: test
-
-      - composer/install:
-          name: style-check-latest
-          executor: composer/latest
-          post-steps:
-            - composer/exec:
-                command: style:check
-
-      - composer/install:
-          name: style-check-7.2
-          executor: composer/php-72
-          post-steps:
-            - composer/exec:
-                command: style:check
