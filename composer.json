@@ -1,7 +1,7 @@
 {
     "name": "typisttech/imposter-plugin",
     "type": "composer-plugin",
-    "description": "Composer plugin that wraps all composer vendor packages inside your own namespace. Intended for WordPress plugins",
+    "description": "Composer plugin that wraps all composer vendor packages inside your own namespace. Intended for WordPress plugins.",
     "keywords": [
         "composer",
         "composer-plugin",
@@ -44,7 +44,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5.x-dev"
+            "dev-master": "0.6.x-dev"
         },
         "class": "TypistTech\\Imposter\\Plugin\\ImposterPlugin"
     },
@@ -58,8 +58,6 @@
             "composer update",
             "@test",
             "@style:check",
-            "composer normalize",
-            "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
         "style:check": "phpcs --colors -p",
