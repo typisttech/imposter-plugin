@@ -579,16 +579,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "cbee637510037f293e641857b2a6223d0ea8008d"
+                "reference": "62139b2806178adb979d76bd3437534a1a9fd490"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/cbee637510037f293e641857b2a6223d0ea8008d",
-                "reference": "cbee637510037f293e641857b2a6223d0ea8008d",
+                "url": "https://api.github.com/repos/composer/composer/zipball/62139b2806178adb979d76bd3437534a1a9fd490",
+                "reference": "62139b2806178adb979d76bd3437534a1a9fd490",
                 "shasum": ""
             },
             "require": {
@@ -667,7 +667,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-13T16:31:06+00:00"
+            "time": "2020-12-03T16:20:39+00:00"
         },
         {
             "name": "composer/semver",
@@ -747,16 +747,16 @@
         },
         {
             "name": "composer/spdx-licenses",
-            "version": "1.5.4",
+            "version": "1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "6946f785871e2314c60b4524851f3702ea4f2223"
+                "reference": "de30328a7af8680efdc03e396aad24befd513200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/6946f785871e2314c60b4524851f3702ea4f2223",
-                "reference": "6946f785871e2314c60b4524851f3702ea4f2223",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/de30328a7af8680efdc03e396aad24befd513200",
+                "reference": "de30328a7af8680efdc03e396aad24befd513200",
                 "shasum": ""
             },
             "require": {
@@ -768,7 +768,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 }
             },
             "autoload": {
@@ -817,7 +817,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-15T15:35:07+00:00"
+            "time": "2020-12-03T16:04:16+00:00"
         },
         {
             "name": "composer/xdebug-handler",
