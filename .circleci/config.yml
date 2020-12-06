@@ -22,7 +22,9 @@ jobs:
       - restore_cache:
           keys:
             - composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
-      - run: composer update --prefer-lowest --no-interaction --prefer-dist
+      # Force to use composer v1
+      - run: composer require --dev --update-with-all-dependencies composer/composer:"^1.10.19"
+      - run: composer update --no-interaction --prefer-dist
       - save_cache:
             key: composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
             paths:
@@ -37,16 +39,16 @@ workflows:
           name: test-composer-v1-php-<< matrix.version >>
           matrix:
             parameters:
-              version: ["7.4", "7.3" ]
+              version: ["8.0", "7.4", "7.3"]
       - php/test:
           name: test-php-<< matrix.version >>
           matrix:
             parameters:
-              version: ["7.4", "7.3"]
+              version: ["8.0", "7.4", "7.3"]
       - php/test:
           name: style-check-php-<< matrix.version >>
           test-command: style:check
           matrix:
             parameters:
-              version: ["7.4", "7.3"]
+              version: ["8.0", "7.3"]
 

@@ -12,7 +12,7 @@ modules:
         - Cli
         - Filesystem
         - ComposerProject:
-            composerInstallFlags: '--no-interaction --prefer-dist --no-suggest --no-ansi'
+            composerInstallFlags: '--no-interaction --prefer-dist --no-ansi'
             projectRoot: 'tests/_data/fake-project'
             symlink: 'false'
             repositoryPaths:
