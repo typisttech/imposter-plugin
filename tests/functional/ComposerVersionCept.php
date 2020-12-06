@@ -6,7 +6,7 @@ $expectedComposerMajorVersion = $expectComposerV1 ? 'Composer version 1.10.' : '
 $I = new FunctionalTester($scenario);
 $I->wantToTest("we are testing against ${expectedComposerMajorVersion}");
 
-$I->runComposerCommand('--version');
+$I->runComposerCommand('--version --no-ansi');
 
 $I->seeInShellOutput($expectedComposerMajorVersion);
 
