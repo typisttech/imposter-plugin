@@ -27,10 +27,26 @@ class Transformer
             $io->write(" - <comment>$index/$count</comment>: Transforming $autoload", true);
             $imposter->transform($autoload);
             $index++;
-        };
+        }
+
+        $io->write('<info>Success: Imposter transformed vendor files.</info>', true);
+
+        $invalidAutoloads = $imposter->getInvalidAutoloads();
+        if (! empty($invalidAutoloads)) {
+            $invalidAutoloadsCount = count($invalidAutoloads);
+            $io->writeError('', true);
+            $io->writeError(
+                // phpcs:ignore Generic.Files.LineLength.TooLong
+                "<warning>Warning: Imposter failed to transformed $invalidAutoloadsCount of the autoload path(s).</warning>",
+                true
+            );
+
+            foreach ($invalidAutoloads as $invalidAutoload) {
+                $io->writeError(" - $invalidAutoload", true);
+            }
+        }
 
         // Print empty lines to separate imposter outputs.
-        $io->write('<info>Success: Imposter transformed vendor files.</info>', true);
         $io->write('', true);
         $io->write('', true);
     }

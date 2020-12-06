@@ -2,7 +2,9 @@
     "name": "dummy/dummy-psr4",
     "autoload": {
         "psr-4": {
-            "Dummy\\Psr4\\": "src/"
+            "Dummy\\Psr4\\": "src/",
+            "Dummy\\Invalid\\": "non-exist-src/",
+            "Dummy\\AnotherInvalid\\": "another-non-exist-src/"
         }
     }
 }
