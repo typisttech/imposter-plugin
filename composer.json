@@ -10,7 +10,7 @@
         "namespace",
         "wordpress"
     ],
-    "homepage": "https://www.typist.tech/projects/imposter-plugin",
+    "homepage": "https://github.com/TypistTech/imposter-plugin",
     "license": "MIT",
     "authors": [
         {
@@ -54,13 +54,8 @@
         }
     },
     "scripts": {
-        "pretag": [
-            "composer update",
-            "@test",
-            "@style:check",
-            "github_changelog_generator --no-verbose"
-        ],
-        "style:check": "phpcs --colors -p",
+        "style:check": "phpcs",
+        "style:fix": "phpcbf",
         "test": "codecept run --debug"
     },
     "support": {

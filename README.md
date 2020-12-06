@@ -128,6 +128,10 @@ Here you go:
 
 *Add your own [here](https://github.com/TypistTech/imposter-plugin/edit/master/README.md)*
 
+### Which composer versions are supported?
+
+Both v1 and v2.
+
 ### Will you add support for older PHP versions?
 
 Never! This plugin will only work on [actively supported PHP versions](https://secure.php.net/supported-versions.php).
@@ -153,9 +157,7 @@ Thanks! Glad you like it. It's important to let me knows somebody is using this 
 - write tutorials and blog posts
 - **[hire](https://www.typist.tech/contact/) Typist Tech**
 
-## Running the Tests
-
-Run the tests:
+## Testing
 
 ```bash
 composer test
@@ -181,13 +183,9 @@ Here is a list of alternatives that I found. However, none of these satisfied my
 Please [submit an issue](https://github.com/TypistTech/imposter-plugin/issues/new) and point out what you do and don't like, or fork the project and [send pull requests](https://github.com/TypistTech/imposter-plugin/pulls/).
 **No issue is too small.**
 
-## Change log
-
-Please see [CHANGELOG](./CHANGELOG.md) for more information on what has changed recently.
-
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within this project, please email us at [imposter-plugin@typist.tech](mailto:imposter-plugin@typist.tech). 
+If you discover a security vulnerability within this project, please email us at [imposter-plugin@typist.tech](mailto:imposter-plugin@typist.tech).
 All security vulnerabilities will be promptly addressed.
 
 ## Credits

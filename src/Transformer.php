@@ -19,8 +19,8 @@ class Transformer
         $io->write('Loading package information from <comment>' . getcwd() . '/composer.json</comment>', true);
 
         $imposter = ImposterFactory::forProject(getcwd(), ['typisttech/imposter-plugin']);
-        $autoloads = $imposter->getAutoloads();
 
+        $autoloads = $imposter->getAutoloads();
         $count = count($autoloads);
         $index = 1;
         foreach ($autoloads as $autoload) {
