@@ -6,6 +6,15 @@
    <exclude-pattern>/tests/functional/*</exclude-pattern>
    <exclude-pattern>/vendor/*</exclude-pattern>
 
+   <!-- Show colors in console -->
+   <arg value="-colors"/>
+
+   <!-- Show progress and sniff codes in all reports; Show progress of the run -->
+   <arg value="sp"/>
+
+   <!-- Scan only PHP files -->
+   <arg name="extensions" value="php"/>
+
    <rule ref="PSR2"/>
    <rule ref="PSR12"/>
 
