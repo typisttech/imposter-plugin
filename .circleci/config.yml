@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - php/install-composer:
-          install-version: 1.10.16
+          install-version: 1.10.19
       - run: php -v
       - run: composer --version
       - restore_cache:
