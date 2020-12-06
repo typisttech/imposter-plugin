@@ -4,30 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87bc2f5bfed2b16fec602f9e18d43374",
+    "content-hash": "7a5d5b00a4f972ca6a6b11e23bf3dc74",
     "packages": [
         {
             "name": "typisttech/imposter",
-            "version": "0.5.0",
+            "version": "0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypistTech/imposter.git",
-                "reference": "d124d428c967551be815fb4602c73025da2b2893"
+                "reference": "f52b1a2289d2ea9c660cf9595085d0b11469af83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/d124d428c967551be815fb4602c73025da2b2893",
-                "reference": "d124d428c967551be815fb4602c73025da2b2893",
+                "url": "https://api.github.com/repos/TypistTech/imposter/zipball/f52b1a2289d2ea9c660cf9595085d0b11469af83",
+                "reference": "f52b1a2289d2ea9c660cf9595085d0b11469af83",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^7.2"
+                "php": "^7.3 || ^8.0"
             },
             "require-dev": {
                 "codeception/codeception": "^4.1",
                 "codeception/mockery-module": "^0.4.0",
-                "codeception/module-asserts": "^1.1",
+                "codeception/module-asserts": "^1.3",
                 "codeception/module-filesystem": "^1.0",
                 "squizlabs/php_codesniffer": "^3.5"
             },
@@ -37,7 +37,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4.x-dev"
+                    "dev-master": "0.6.x-dev"
                 }
             },
             "autoload": {
@@ -62,8 +62,8 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins",
-            "homepage": "https://typist.tech/projects/imposter",
+            "description": "Wrapping all composer vendor packages inside your own namespace. Intended for WordPress plugins.",
+            "homepage": "https://github.com/TypistTech/imposter",
             "keywords": [
                 "composer",
                 "dependency",
@@ -85,7 +85,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-15T19:55:54+00:00"
+            "time": "2020-12-06T22:57:09+00:00"
         }
     ],
     "packages-dev": [
