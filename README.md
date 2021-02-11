@@ -118,6 +118,17 @@ Learn more on [imposter's readme](https://github.com/TypistTech/imposter/) for m
 
 Use [imposter](https://github.com/TypistTech/imposter/) directly.
 
+### How to distrube impostified plugins?
+
+1. Switch to the lowest PHP version you support
+1. Install dependencies
+    * `$ composer install --no-dev --classmap-authoritative --prefer-dist`
+1. Clean up the source code, e.g: remove test files
+1. Zip the source code. Tips: Use [`$ composer archive`](https://getcomposer.org/doc/03-cli.md#archive)
+1. Send the zip to others / Commit to wp.org SVN. Tips:
+    * [How to Deploy a WordPress Plugin From TravisCI to WordPress.org](https://code.tutsplus.com/tutorials/how-to-deploy-wordpress-plugin-from-travisci-to-wordpressorg--cms-28831)
+    * [WordPress.org Plugin Deploy (GitHub action by 10up)](https://github.com/10up/action-wordpress-plugin-deploy)
+
 ### Do you have real life examples that use this composer plugin?
 
 Here you go:
