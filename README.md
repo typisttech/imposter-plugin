@@ -133,9 +133,9 @@ Use [imposter](https://github.com/TypistTech/imposter/) directly.
 
 Impostified plugins are meant to be commited to wp.org svn.
 
-Using imposter means you forgo the ability to install the plugins with composer directly via [packagist.org](https://packagist.org/) or VCS (even with `type": wordpress-plugin` in `composer.json`).
+Using imposter means you forgo the ability to install the plugins with composer directly via [packagist.org](https://packagist.org/) or VCS (even with `type: wordpress-plugin` in `composer.json`).
 
-To `composer install` impostified plugins, use [wpackagist.org](https://wpackagist.org).
+To `composer require` impostified plugins, use [wpackagist.org](https://wpackagist.org).
 
 ### Do you have real life examples that use this composer plugin?
 
