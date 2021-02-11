@@ -129,6 +129,14 @@ Use [imposter](https://github.com/TypistTech/imposter/) directly.
     * [How to Deploy a WordPress Plugin From TravisCI to WordPress.org](https://code.tutsplus.com/tutorials/how-to-deploy-wordpress-plugin-from-travisci-to-wordpressorg--cms-28831)
     * [WordPress.org Plugin Deploy (GitHub action by 10up)](https://github.com/10up/action-wordpress-plugin-deploy)
 
+### How to install impostified plugins via composer?
+
+Impostified plugins are meant to be commited to wp.org svn.
+
+Using imposter means you forgo the ability to install the plugins with composer directly via [packagist.org](https://packagist.org/) or VCS (even with `type": wordpress-plugin` in `composer.json`).
+
+To `composer install` impostified plugins, use [wpackagist.org](https://wpackagist.org).
+
 ### Do you have real life examples that use this composer plugin?
 
 Here you go:
