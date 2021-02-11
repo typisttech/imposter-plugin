@@ -142,7 +142,7 @@ To `composer require` impostified plugins, use [wpackagist.org](https://wpackagi
 
 Until WordPress core comes up with a [solution on dependency managment](https://core.trac.wordpress.org/ticket/22316), keep clam and carry on.
 
-In the meantime, checkout these tools ~~~to make WordPress suck less~~~ modernizing WordPress development:
+In the meantime, checkout these tools ~~to make WordPress suck less~~ modernizing WordPress development:
 
 - [bring OOP into WordPress](https://github.com/search?q=topic%3Awordpress-development+org%3ATypistTech&type=Repositories)
 - [leveraging development practices from other languages and ecosystems, and applying them to WordPress](https://roots.io)
