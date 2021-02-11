@@ -122,9 +122,8 @@ Use [imposter](https://github.com/TypistTech/imposter/) directly.
 
 Here you go:
 
- * [Sunny](https://github.com/Typisttech/sunny)
- * [WP Cloudflare Guard](https://github.com/TypistTech/wp-cloudflare-guard)
-
+ * [Spatie Ray](https://github.com/spatie/wordpress-ray)
+ * [Notification](https://github.com/BracketSpace/Notification)
 
 *Add your own [here](https://github.com/TypistTech/imposter-plugin/edit/master/README.md)*
 
