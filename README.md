@@ -50,6 +50,7 @@ Monkey patching composer vendor packages, wrapping them inside your own namespac
 See:
 - [A Narrative of Using Composer in a WordPress Plugin](https://wptavern.com/a-narrative-of-using-composer-in-a-wordpress-plugin)
 - [A Warning About Using Composer With WordPress](https://wppusher.com/blog/a-warning-about-using-composer-with-wordpress/)
+- [Plugin Dependencies (Yet Another Plugin Dependencies Ticket)](https://core.trac.wordpress.org/ticket/22316)
 
 ## Install
 
@@ -118,13 +119,40 @@ Learn more on [imposter's readme](https://github.com/TypistTech/imposter/) for m
 
 Use [imposter](https://github.com/TypistTech/imposter/) directly.
 
+### How to distrube impostified plugins?
+
+1. Switch to the lowest PHP version you support
+1. Install dependencies
+    * `$ composer install --no-dev --classmap-authoritative --prefer-dist`
+1. Clean up the source code, e.g: remove test files
+1. Zip the source code. Tips: Use [`$ composer archive`](https://getcomposer.org/doc/03-cli.md#archive)
+1. Send the zip to others / Commit to wp.org SVN. Tips:
+    * [How to Deploy a WordPress Plugin From TravisCI to WordPress.org](https://code.tutsplus.com/tutorials/how-to-deploy-wordpress-plugin-from-travisci-to-wordpressorg--cms-28831)
+    * [WordPress.org Plugin Deploy (GitHub action by 10up)](https://github.com/10up/action-wordpress-plugin-deploy)
+
+### How to install impostified plugins via composer?
+
+Impostified plugins are meant to be commited to wp.org svn.
+
+Using imposter means you forgo the ability to install the plugins with composer directly via [packagist.org](https://packagist.org/) or VCS (even with `type: wordpress-plugin` in `composer.json`).
+
+To `composer require` impostified plugins, use [wpackagist.org](https://wpackagist.org).
+
+### The whole imposter situation is horrible. What can we do about it?
+
+Until WordPress core comes up with a [solution on dependency managment](https://core.trac.wordpress.org/ticket/22316), keep clam and carry on.
+
+In the meantime, checkout these tools ~~~to make WordPress suck less~~~ modernizing WordPress development:
+
+- [bring OOP into WordPress](https://github.com/search?q=topic%3Awordpress-development+org%3ATypistTech&type=Repositories)
+- [leveraging development practices from other languages and ecosystems, and applying them to WordPress](https://roots.io)
+
 ### Do you have real life examples that use this composer plugin?
 
 Here you go:
 
- * [Sunny](https://github.com/Typisttech/sunny)
- * [WP Cloudflare Guard](https://github.com/TypistTech/wp-cloudflare-guard)
-
+ * [Spatie Ray](https://github.com/spatie/wordpress-ray)
+ * [Notification](https://github.com/BracketSpace/Notification)
 
 *Add your own [here](https://github.com/TypistTech/imposter-plugin/edit/master/README.md)*
 
