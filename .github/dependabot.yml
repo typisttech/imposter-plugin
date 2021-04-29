@@ -4,10 +4,3 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "17:30"
-    timezone: Europe/London
-  ignore:
-  - dependency-name: symfony/string
-    versions:
-    - 5.2.4
-    - 5.2.6
